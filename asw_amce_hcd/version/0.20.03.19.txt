@@ -1,0 +1,10 @@
+Version 0.20.03.19
+
+Cambios realizados:
+* Se agregó una imagen al menu de HCD
+* Al ingresar al menu de HCD ahora muestra por defecto las historias Clinicas digitales
+* A las Historias clinicas digitales se le agregaron las vistan Kanban y pivot.
+* La vista de Lista de HCD fue formateada
+* Se formateó el reporte de la historia clinica
+* Se Agregaron los campos visibles para hacer busquedas rápidas
+* se agregaron agrupaciones por defecto : día, Médico y Movil

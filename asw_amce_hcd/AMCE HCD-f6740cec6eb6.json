@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "amce-hcd",
+  "private_key_id": "f6740cec6eb69c22cdcc6bd0ea333be54557d8e7",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDGxrCR5hKB27Nx\n7u8O8b1MqO15PFMro3FjzuKFcri9XuTBAyXFYSBVCBFm1AOFdXQiLq7YJbPYPc4O\nD1cneL7LilSiHzLmac/+A9U6Gnroy2XKdPZnp3Z8fgN0Rx20gltc2PLwYbKp69qR\nB4SCTaMPygGl6W79uqRx5zLCVa5DB9AhgMqK2eSIoNgij6qttActz9LQ6AlHIovV\nV/lJPTm4F8vQ6CpJLsBmoX6RSxa3RYC6qBspYRzDdbCoEUCk4PrtHQWnZv9v6Piz\ncIcFNPrxUwwFSwb1zZbmOt3vivy3sGvLPEKnk7sV27hBJUqByXo0YZ2hWkJj0Nt5\nD9BI8t8BAgMBAAECggEACBeqgTFKYcwI4n1CPhI2AGsRY/HcE8PVlKUldrf31z0H\n3hqOzQBwkwjYwISmi6ZMLvoS9zMtvukUb8d/5yT7Me+Oe4OYP5lhaBHnrYDKrgCR\nD9MY/WZSPhMMeMCBo2NgbQeOEgUNA4fATOg78YKDCw9qNFysPpsv7hn/m7n/3E2t\ndHm1yVpA+VMre2Ru3vOJYeGZeKhmCBFvrURDbPT5/fjwce0i6oT725mvVrjG5gVc\nMAinm7ueappirfbbrkfz79sD/gKVKTiDsM4Zb2mBDF9eDg6tYT5t1oG8rvSMMsU8\nsD12wLFk+Nm0tlZbpSYvyll8gRtZ28Fjyi2I6DrheQKBgQDl0vq4dtTcfgXPepeG\nubxkDFpP0d1v1WzFPWpiOFKavk/oUbOSkzEKqmf361n00HQ6UN0SeROvafOlqqf/\nJF2SwivMkpgqXXgNi/sby08m2gozsvGamZtowm1zDzCdz73oLsXt4sjoHtZ/jrSP\nfRtlUqDR1V2Hjnf4Gl7LRCekpQKBgQDdanA++d6tpA+yZHzBGUzWEWiaAj+8lWzX\nTrJGiNyFfyfdPBnUGuZn/WESeSRgZJ6TOHZCbArJRpY2hFSJSW+IxSyhMUTGX1Yl\n2n/YNn9XFP1oYFNuumDNppKrUOquflfUeoyNsIEXUHS+9BnIpGvm8qbgD9FEvUxE\nQIrJHKXWLQKBgQCqwYABUGFFVekRR9+PfS7JExiC18X0EpnXTpNdWMWfLamHTjTi\nwbQdXZET9eyHZd4FehFXaVhD66/YthxOCIHxyYzrWTvvtjS9s/SlqQAtOLF9ygWS\nvXBnfJX/eBjCGBjciuwKnIZzWH48lhX3ypdxR9wvK51rW2Itl8I4unHN9QKBgGPO\npQZeUDhpqgG6Nlo881vTwRkbRmvV15g+izIsY2tx5CBgBSyNa6sYlndjUDh7Ytfu\nLbDHTx1nyjKM+CZiifpXF0UaFmxtcUHi+poWBtTUS16PfUx+i0Bog9jhwsghf6ny\nDAWauLYvuFCTbEP7igAzBXIe7zBTPFvP1D/PwBmJAoGAaTyKXOFg57MtJW57DokA\nlp1J7pZbKaYrKBOi1QyWiIOfQLyIuHURzjXAFvva7aQgcDQ6qjRlG2z5t6fNWSJu\n46M2EhLZmn4mg2cUfLydGD7dR/Ju0yjfMcigdUkQabegq+K7K7N9IxyuBiQDUpIg\n8A1lQk2cFU3gNDxvu5LKBvo=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firmas-amce@amce-hcd.iam.gserviceaccount.com",
+  "client_id": "111288808835787334703",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firmas-amce%40amce-hcd.iam.gserviceaccount.com"
+}

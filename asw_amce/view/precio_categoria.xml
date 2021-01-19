@@ -1,0 +1,92 @@
+<openerp>
+    <data>
+        <record model="ir.actions.act_window" id="asw_precio_categoria_list_action">
+            <field name="name">Precio de Categoria</field>
+            <field name="res_model">asw.precio_categoria</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Cree el primer Precio de Categoria</p>
+            </field>
+            </record>
+            
+            <record id="view_tree_precio_categoria_ui" model="ir.ui.view">
+            <field name="name">Precio de Categoria</field>
+            <field name="model">asw.precio_categoria</field>
+            <field name="arch" type="xml">
+            <tree>
+                <field name="id" string="Nro Interno"/>
+                <field name="pca_categoria" />
+                <field name="pca_fecha" />
+                <field name="pca_precio" />
+            </tree>
+            </field>
+        </record>
+        
+        <record  id="view_form_precio_categoria_ui" model="ir.ui.view">
+            <field name="name">Precio de Categoria</field>
+            <field name="model">asw.precio_categoria</field>
+            <field name="arch" type="xml">
+            <form>
+            <header>
+                <field name="pca_periodo_cerrado" invisible='1'/>
+                
+                <button name="actualizar_precio_guardias"
+                        string="Actualizar precio de Guardias"
+                        type="object"
+                        confirm="!!!CUIDADO¡¡¡ Se van a cambiar todos los precios de las guardias emitidas de la categoria seleccionada desde la fecha desde, si esta seguro continue."
+                        attrs="{ 'invisible' : [('pca_periodo_cerrado','=',True)] }"
+                        />
+                
+            </header>
+            <sheet>
+                <field name="pca_guardias_emitidas"  invisible='1'/>
+                <group>
+                    <field name="pca_categoria" required="1" attrs="{ 'readonly' : [('pca_guardias_emitidas','=',True)] }"/>
+                    <field name="pca_fecha" required="1" attrs="{ 'readonly' : [('pca_guardias_emitidas','=',True)] }"/>
+                    <field name="pca_periodo" />
+                    <field name="pca_precio" required="1" attrs="{ 'readonly' : [('pca_periodo_cerrado','=',True)] }"/>
+                </group>
+                
+                <group attrs="{ 'invisible' : ['|',('pca_guardias_emitidas','=',False),('pca_periodo_cerrado','=',True)] }">
+                    <div>
+                        <p>
+                            Ya se encuentran emitidas guardias para esta categoria luego de la fecha seleccionada.
+                            <br/>
+                            <b>
+                            ¡¡¡¡CUIDADO!!! 
+                            </b>
+                                Si cambia el importe de este registro
+                            <br/>
+                            Para actualizar los precios de las guardias, por favor precione el boton de arriba
+                        </p>
+                    </div>
+                </group>
+                <group attrs="{ 'invisible' : [('pca_periodo_cerrado','=',False)] }">
+                    <div>
+                        El periodo al que pertenecen la fecha Desde, esta cerrado. Por favor cargue un nuevo registro para modificar el precio de las guardias o abra el periodo.
+                    </div>
+                </group>
+                
+                <div  class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"></field>
+                    <field name="message_ids" widget="mail_thread"></field>
+                </div>
+            </sheet>
+            </form>
+            </field>
+        </record>
+        
+        <record id="view_search_precio_categoria" model="ir.ui.view">
+            <field name="name">Precio de Categoria</field>
+            <field name="model">asw.precio_categoria</field>
+            <field name="arch" type="xml">
+            <search>
+                <field name="pca_categoria" string="Categoria" filter_domain="[('pca_categoria', 'ilike', self)]"/>
+                <field name="id" string="Nro interno"/>
+                <field name="pca_act_precio" />
+            </search>
+            </field>
+        </record>
+    </data>
+</openerp>

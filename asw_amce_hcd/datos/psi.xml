@@ -1,0 +1,31 @@
+<openerp>
+    <data noupdate='1'>
+        <record id="psi_normal" model="asw.psi">
+            <field name='psi_nombre'>Normal</field>
+        </record>
+        <record id="psi_depresivo" model="asw.psi">
+            <field name='psi_nombre'>Depresivo</field>
+        </record>
+        <record id="psi_ansioso" model="asw.psi">
+            <field name='psi_nombre'>Ansioso</field>
+        </record>
+        <record id="psi_agresivo" model="asw.psi">
+            <field name='psi_nombre'>Agresivo</field>
+        </record>
+        <record id="psi_violento" model="asw.psi">
+            <field name='psi_nombre'>Violento</field>
+        </record>
+        <record id="psi_no_se_investiga" model="asw.psi">
+            <field name='psi_nombre'>No se investiga</field>
+        </record>
+        <record id="psi_delirio" model="asw.psi">
+            <field name='psi_nombre'>Delirio</field>
+        </record>
+        <record id="psi_alterac_social" model="asw.psi">
+            <field name='psi_nombre'>Alterac. social</field>
+        </record>
+        <record id="psi_intento_suicidio" model="asw.psi">
+            <field name='psi_nombre'>Intento suicidio</field>
+        </record>
+    </data>
+</openerp> 

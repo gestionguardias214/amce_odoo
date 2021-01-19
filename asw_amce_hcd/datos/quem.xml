@@ -1,0 +1,24 @@
+
+        <openerp>
+        <data noupdate='1'>
+        
+<record id="quem_termica" model="asw.quem">
+    
+    <field name='quem_nombre'>Termica</field>
+
+</record>
+
+<record id="quem_quimica" model="asw.quem">
+    
+    <field name='quem_nombre'>Quimica</field>
+
+</record>
+
+<record id="quem_electrica" model="asw.quem">
+    
+    <field name='quem_nombre'>Electrica</field>
+
+</record>
+
+        </data>
+        </openerp> 

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="view_form_medicacion" model="ir.ui.view">
+            <field name="name">Medicacion</field>
+            <field name="model">asw.medicacion</field>
+            <field name="arch" type="xml">
+                <form string="Medicacion">
+                    <header>
+                    </header>
+                    <sheet>
+                        <group string="Descripcion" col='4'>
+                        <field name="medicacion_nombre" />
+                        <field name="medicacion_codigo" />
+                        <field name="active" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_medicacion" model="ir.ui.view">
+            <field name="name">Medicacion</field>
+            <field name="model">asw.medicacion</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="medicacion_nombre" />
+                    <field name="medicacion_codigo" />
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="view_search_medicacion" model="ir.ui.view">
+            <field name="name">Medicacion</field>
+            <field name="model">asw.medicacion</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="medicacion_nombre" />
+                    <field name="medicacion_codigo" />
+                </search>
+            </field>
+        </record>
+        
+        <record id="action_medicacion_act_window" model="ir.actions.act_window">
+            <field name="type">ir.actions.act_window</field>
+            <field name="name">Medicacion</field>
+            <field name="res_model">asw.medicacion</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+            <field name="target">current</field>
+        </record>
+    </data>
+</odoo>

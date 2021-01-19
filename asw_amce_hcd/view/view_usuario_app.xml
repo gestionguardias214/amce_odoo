@@ -1,0 +1,62 @@
+<openerp>
+    <data>
+        <record model="ir.actions.act_window" id="asw_usuario_app_list_action">
+            <field name="name">usuario_app</field>
+            <field name="res_model">asw.usuario_app</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Cree el primer usuario_app</p>
+            </field>
+        </record>
+
+        <record id="view_tree_usuario_app_ui" model="ir.ui.view">
+            <field name="name">usuario_app</field>
+            <field name="model">asw.usuario_app</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="app_nombre" />
+                    <field name="app_matricula" />
+                    <field name="app_mail" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_form_usuario_app_ui" model="ir.ui.view">
+            <field name="name">usuario_app</field>
+            <field name="model">asw.usuario_app</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+
+                    </header>
+                    <sheet>
+
+                        <group>
+                            <field name="app_nombre" />
+                            <field name="app_matricula" />
+                            <field name="app_mail" />
+                            <field name="app_password" />
+
+
+                        </group>
+
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_search_usuario_app" model="ir.ui.view">
+            <field name="name">usuario_app</field>
+            <field name="model">asw.usuario_app</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="app_nombre" />
+                    <field name="app_matricula" />
+                    <field name="app_mail" />
+                </search>
+            </field>
+        </record>
+    </data>
+</openerp>

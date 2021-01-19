@@ -1,0 +1,29 @@
+        
+<openerp>
+    <data noupdate='1'>
+        <record id="urogen_no_corresponde" model="asw.urogen">
+            <field name='urogen_nombre'>No corresponde</field>
+        </record>
+        <record id="urogen_normal" model="asw.urogen">
+            <field name='urogen_nombre'>Normal</field>
+        </record>
+        <record id="urogen_hematuria" model="asw.urogen">
+            <field name='urogen_nombre'>Hematuria</field>
+        </record>
+        <record id="urogen_anuria" model="asw.urogen">
+            <field name='urogen_nombre'>Anuria</field>
+        </record>
+        <record id="urogen_sonda_vesical" model="asw.urogen">
+            <field name='urogen_nombre'>Sonda vesical</field>
+        </record>
+        <record id="urogen_globo_vesical" model="asw.urogen">
+            <field name='urogen_nombre'>Globo vesical</field>
+        </record>
+        <record id="urogen_dolor_testic" model="asw.urogen">
+            <field name='urogen_nombre'>Dolor testic.</field>
+        </record>
+        <record id="urogen_punio_perc" model="asw.urogen">
+            <field name='urogen_nombre'>Puño perc</field>
+        </record>
+    </data>
+</openerp> 

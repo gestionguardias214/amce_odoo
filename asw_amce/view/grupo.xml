@@ -1,0 +1,75 @@
+<openerp>
+    <data>
+        <record model="ir.actions.act_window" id="asw_grupo_list_action">
+            <field name="name">Grupo</field>
+            <field name="res_model">asw.grupo</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Cree el primer Grupo</p>
+            </field>
+            </record>
+            
+            <record id="view_tree_grupo_ui" model="ir.ui.view">
+            <field name="name">Grupo</field>
+            <field name="model">asw.grupo</field>
+            <field name="arch" type="xml">
+            <tree string="Grupo" create="1" delete="1" edit="1">
+                <field name="name"/>
+            </tree>
+            </field>
+        </record>
+        
+        <record  id="view_form_grupo_ui" model="ir.ui.view">
+            <field name="name">Grupo</field>
+            <field name="model">asw.grupo</field>
+            <field name="arch" type="xml">
+            <form>
+            <header>
+            
+            </header>
+            <sheet>
+                <div class="oe_title">
+                <label for="gru_nombre" class="oe_edit_only" />
+                    <h1>
+                        <field name="gru_nombre" class="oe_inline" required="1"
+                        placeholder="Nombre del grupo" />
+                    </h1>
+                </div>
+
+                <group string="Información">
+                    <field name="gru_codigo" required="1"/>
+                </group>
+
+                
+                <group string="Periodo" col="4">
+                    <label for="gru_dia_inicio_especial" colspan="2"></label>
+                    <field name="gru_dia_inicio_especial" nolabel="1" colspan="2"/>
+
+                    <label for="gru_dia_inicio" colspan="2" attrs="{ 'invisible' : [('gru_dia_inicio_especial', '=', False)] }"></label>
+                    <field name="gru_dia_inicio" nolabel="1" colspan="2" attrs="{ 'invisible' : [('gru_dia_inicio_especial', '=', False)] }"/>
+                </group>
+                
+                
+
+                <div  class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"></field>
+                    <field name="message_ids" widget="mail_thread"></field>
+                </div>
+            </sheet>
+            </form>
+            </field>
+        </record>
+        
+        <record id="view_search_grupo" model="ir.ui.view">
+            <field name="name">Grupo</field>
+            <field name="model">asw.grupo</field>
+            <field name="arch" type="xml">
+            <search>
+                <field name="name" string="Nombre" filter_domain="[('name', 'ilike', self)]"/>
+                <field name="gru_codigo" string="Codigo" filter_domain="[('gru_codigo', 'ilike', self)]"/>
+            </search>
+            </field>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Author: minh.hquang09@gmail.com -->
+<odoo>
+	<data>
+        <!-- 
+        <template id="customizing_css_asw_bootstrap" inherit_id="website.layout" name="customizing_css_asw_bootstrap">
+		    <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/asw_bootstrap/static/src/css/bootstrap.css"/>
+                <script src="/asw_bootstrap/static/src/js/jquery-3.3.1.min.js"></script>
+		    </xpath>
+		</template> 
+        -->
+	</data>
+</odoo>

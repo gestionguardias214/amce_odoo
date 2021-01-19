@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="view_form_trauma_lugar" model="ir.ui.view">
+            <field name="name">Lugar de Trauma</field>
+            <field name="model">asw.trauma_lugar</field>
+            <field name="arch" type="xml">
+                <form string="Lugar de Trauma">
+                    <sheet>
+                        <group string="Descripcion" col='4'>
+                            <field name="trauma_lugar_nombre" /> <newline />
+                            <field name="active" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- <record id="view_tree_trauma_lugar" model="ir.ui.view">
+            <field name="name">Lugar de Trauma</field>
+            <field name="model">asw.trauma_lugar</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="trauma_lugar_nombre" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_trauma_lugar_act_window" model="ir.actions.act_window">
+            <field name="type">ir.actions.act_window</field>
+            <field name="name">Lugar de Trauma</field>
+            <field name="res_model">asw.trauma_lugar</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+            <field name="target">current</field>
+        </record> -->
+    </data>
+</odoo>

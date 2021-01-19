@@ -1,0 +1,7 @@
+Version 0.20.04.17
+
+Cambios realizados:
+* Se cambio el formato de la HCD para la impresion, luego de que 
+Marcela haga algunos comentarios sobre la misma
+* Se creo el perfil Gerente en Historias clinicas digitales el cual puede editar una HCD
+* Se le asigno al usuario de Gaston y de Sandra este perfil.

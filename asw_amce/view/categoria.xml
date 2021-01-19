@@ -1,0 +1,75 @@
+<openerp>
+    <data>
+        <record model="ir.actions.act_window" id="asw_categoria_list_action">
+            <field name="name">Categoria</field>
+            <field name="res_model">asw.categoria</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,kanban</field>            
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Cree la primera Categoria</p>
+            </field>
+        </record>
+
+        <record id="view_tree_categoria_ui" model="ir.ui.view">
+            <field name="name">Categoria</field>
+            <field name="model">asw.categoria</field>
+            <field name="arch" type="xml">
+                <tree string="Categoria" create="1" delete="1" edit="1">
+                    <field name="cat_codigo" />
+                    <field name="cat_nombre" />
+                    <field name="cat_presentismo"/>
+                    <field name="cat_grupo"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_form_categoria_ui" model="ir.ui.view">
+            <field name="name">Categoria</field>
+            <field name="model">asw.categoria</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button type="action" class="oe_stat_button" id="guardia_button" string="Ver Precios" name="%(asw_precio_categoria_list_action)d" context="{'search_default_pca_categoria': active_id, 'default_pca_categoria': active_id}"/>
+                        <button type="action" class="oe_stat_button" id="profesionales_button" string="Ver Profesionales" name="%(asw_profesionales_list_action)d" context="{'search_default_pro_categoria': active_id, 'default_pro_categoria': active_id}"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="cat_nombre" class="oe_edit_only" />
+                            <h1>
+                                <field name="cat_nombre" class="oe_inline" required="1" placeholder="Nombre de Categoria" />
+                            </h1>
+                        </div>
+
+                        <group string="Descripcion" col="4">
+                            <field name="cat_codigo" required="1"/>
+                            <field name="cat_grupo" required="1"/>
+                            <field name="cat_presentismo"/>
+                            <field name="active" />
+                        </group>
+                        
+                        <group string="Configuración">
+                            <field name="cat_fabrica" />
+                            <field name="cat_es_fabrica" />                                                    
+                        </group>
+
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"></field>
+                            <field name="message_ids" widget="mail_thread"></field>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_search_categoria" model="ir.ui.view">
+            <field name="name">asw.categoria.view.search</field>
+            <field name="model">asw.categoria</field>
+            <field name="arch" type="xml">
+                <search string="Categoría">                    
+                    <field name="name" string="Nombre" filter_domain="[('name', 'ilike', self)]"/> 
+                    <field name="cat_grupo" string="Grupo" filter_domain="[('cat_grupo.name', 'ilike', self)]"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</openerp>

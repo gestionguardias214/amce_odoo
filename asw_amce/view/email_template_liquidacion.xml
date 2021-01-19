@@ -1,0 +1,17 @@
+<openerp>
+    <data>
+        <record id="asw_liquidacion_email_template" model="mail.template">
+            <field name="name">Liquidacion</field>
+            <field name="email_from">${(object.user_id.email or object.company_id.email or 'noreply@localhost')|safe}</field>
+            <field name="subject">Asunto mail de la liquidacion</field>
+            <field name="partner_to">${object.partner_id.id}</field>
+            <field name="model_id" ref="asw_amce.model_asw_liquidacion"/>
+            <field name="auto_delete" eval="True"/>                        
+            <field name="lang">${object.partner_id.lang}</field>
+            <field name="body_html"><![CDATA[
+            <div>Hola Mundo</div>
+            ]]>
+            </field>
+        </record>
+    </data>
+</openerp>

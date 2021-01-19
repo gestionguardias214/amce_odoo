@@ -1,0 +1,57 @@
+<openerp>
+    <data>
+        <record id="view_form_inicio_guardia_ui" model="ir.ui.view">
+            <field name="name">Inicio de guardia</field>
+            <field name="model">asw.inicio_guardia</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+
+                    </header>
+                    <sheet>
+                        <group col="4">
+                            <field name="proc_fechahora" required="1" readonly="0"/>                            
+                            <field name="proc_tolerancia" readonly="1"/>
+                            
+                            <field name="proc_profesional" required="1" domain="[('pro_estado', '=', 'disponible')]"/>
+                            <field name="proc_categoria" required="1" options="{ 'no_create': True, 'no_create_edit':True }"/>
+                            <field name="proc_precio_categoria" />
+                        </group>
+
+                        <group col="4" string="Observaciones">
+                            <field name="proc_observaciones" nolabel="1"/>
+                        </group>
+
+                        <footer>
+                            <button name="crear_registro" type="object" class="btn btn-primary" string="Iniciar Guardia"/>
+                            <button name="cancel" string="Cancelar" special="cancel" class="btn btn-cancel"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+         <record id="view_form_inicio_guardia_ui_data" model="ir.ui.view">
+            <field name="name">Inicio de Guardia - Data</field>
+            <field name="model">asw.inicio_guardia</field>
+            <field name="inherit_id" eval="ref('view_form_inicio_guardia_ui')"/>
+            <field name="groups_id" eval="[(6, 0, [ref('module_category_asw_amce_data_entry') ])]"/>
+            <field name="arch" type="xml">
+                <field name="proc_fechahora" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                </field>
+                <field name="proc_precio_categoria" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+            </field> 
+        </record>
+
+        <act_window id="asw_inicio_guardia_action" 
+        name="Nueva Guardia" 
+        src_model="asw.inicio_guardia" 
+        res_model="asw.inicio_guardia" 
+        view_mode="form" 
+        target="new" 
+        multi="True"/>
+    </data>
+</openerp>

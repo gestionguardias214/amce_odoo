@@ -1,0 +1,46 @@
+<openerp>
+  <data>
+    <record id="envio_masivo_form" model="ir.ui.view">
+        <field name="name">Envio Masivo de Mails</field>
+        <field name="model">asw.envio.masivo</field>
+        <field name="arch" type="xml">
+            <form string="Generar versión">
+                <group>     
+                    <div colspan="2">
+                        ¿Está seguro de que quiere enviar el mail de las liquidaciones a los siguientes profesionales?
+                    </div>   
+                    <field name="enl_enviado" invisible="1"/>      
+                    <field name="enl_profesionales" readonly="1" nolabel="1" colspan="2" 
+                        attrs="{ 'invisible' : [('enl_enviado', '=', True)] }"
+                    >
+                        
+                        <tree string="Caption" create="1" delete="1" edit="1" editable="top">                            
+                            <field name="name" />
+                            <field name="email" />
+                            <field name="pro_grupo" />                            
+                        </tree>
+                    </field>
+                    <field name="enl_liquidaciones" nolabel="1" colspan="2" 
+                        attrs="{ 'invisible' : [('enl_enviado', '=', False)] }">                        
+                        <tree string="" create="0" delete="0" edit="0" colors="red:liq_estado_mail!='sent'">
+                            <field name="liq_profesional" />
+                            <field name="liq_estado_mail" />
+                        </tree>                        
+                    </field>
+                </group>
+                
+                <footer>
+                    <button string="Aceptar" name="enviar_mail" type="object" default_focus="1" class="btn-primary"/>
+                    <button name="cancel" string="Cancelar" special="cancel" class="btn btn-cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <act_window id="envio_masivo_action"
+        multi="True"
+        key2="client_action_multi" name="Enviar mails"
+        res_model="asw.envio.masivo" src_model="asw.liquidacion"
+        view_mode="form" target="new" view_type="form" />    
+  </data>
+</openerp>

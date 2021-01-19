@@ -1,0 +1,55 @@
+<openerp>
+    <data>
+        <record model="ir.actions.act_window" id="asw_linea_presentismo_list_action">
+            <field name="name">Linea Presentismo</field>
+            <field name="res_model">asw.linea_presentismo</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Cree el primer Linea Presentismo</p>
+            </field>
+        </record>
+
+        <record id="view_tree_linea_presentismo_ui" model="ir.ui.view">
+            <field name="name">Linea Presentismo</field>
+            <field name="model">asw.linea_presentismo</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="lpr_profesional" />
+                    <field name="lpr_profesional_concepto" />
+                    <field name="lpr_importe" />
+                    <field name="lpr_presentismo" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_form_linea_presentismo_ui" model="ir.ui.view">
+            <field name="name">Linea Presentismo</field>
+            <field name="model">asw.linea_presentismo</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+
+                    </header>
+                    <sheet>
+
+                        <group>
+                            <field name="lpr_profesional" />
+                            <field name="lpr_profesional_concepto" />
+                            <field name="lpr_importe" readonly="1"/>
+                            <field name="lpr_presentismo" />
+
+
+                        </group>
+
+
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"></field>
+                            <field name="message_ids" widget="mail_thread"></field>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>

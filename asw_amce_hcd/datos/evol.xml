@@ -1,0 +1,30 @@
+
+        <openerp>
+        <data noupdate='1'>
+        
+<record id="evol_mejora" model="asw.evol">
+    
+    <field name='evol_nombre'>Mejora</field>
+
+</record>
+
+<record id="evol_sin_cambio" model="asw.evol">
+    
+    <field name='evol_nombre'>Sin cambio</field>
+
+</record>
+
+<record id="evol_desmejora" model="asw.evol">
+    
+    <field name='evol_nombre'>Desmejora</field>
+
+</record>
+
+<record id="evol_fallece" model="asw.evol">
+    
+    <field name='evol_nombre'>Fallece</field>
+
+</record>
+
+        </data>
+        </openerp> 

@@ -1,0 +1,59 @@
+<openerp>
+    <data>
+        <template id="listadoliquidacion">
+            <t t-call="report.html_container">
+                <div class='page'>
+                    <t t-foreach="docs" t-as="o">                    
+                        <h1>Liquidaciones del periodo <span t-field="o.rli_periodo.name" /></h1>
+                        
+                        <table class="table table-striped">
+                            <tr>
+                                <th>
+                                    Profesional
+                                </th>
+                                <th style="text-align: right;">
+                                    Guardias
+                                </th>
+                                <t t-foreach="o.rli_conceptos" t-as="con">  
+                                    <th style="text-align: right;">                                    
+                                        <span t-field="con.name" />                                    
+                                    </th>
+                                </t>
+                                <th style="text-align: right;">Total</th>
+                            </tr>
+                            <t t-foreach="o.rli_liquidaciones" t-as="liq">
+                                <tr>                                
+                                    <t t-set="total" t-value="0"/>                                
+                                    <td>
+                                        <span t-field="liq.liq_profesional.name" />
+                                    </td>
+                                    <td style="text-align: right;">                                    
+                                        <t t-set="total" t-value="liq.importe_guardia()"/>
+                                        <t t-esc="total" />
+                                    </td>
+                                    <t t-foreach="o.rli_conceptos" t-as="con">  
+                                        <td style="text-align: right;">                               
+                                            <t t-set="importe_concepto" t-value="liq.importe_concepto(con)"/>
+                                            <t t-set="total" t-value="total + importe_concepto"/>
+                                            <t t-esc="importe_concepto" />                                    
+                                        </td>
+                                    </t>
+                                    <td style="text-align: right;">
+                                        <t t-esc="total" />
+                                        
+                                    </td>
+                                </tr>                  
+                            </t>
+                        </table>
+                    </t>
+                </div>
+                <script>
+                    function export() {
+                        alert('Hola mundo')
+                    }
+                </script>
+            </t>
+        </template>
+
+    </data>
+</openerp>

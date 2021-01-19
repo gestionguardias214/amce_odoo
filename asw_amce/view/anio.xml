@@ -1,0 +1,60 @@
+<openerp>
+    <data>
+        <record model="ir.actions.act_window" id="asw_anio_list_action">
+            <field name="name">Año</field>
+            <field name="res_model">asw.anio</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Cree el primer Año</p>
+            </field>
+        </record>
+
+        <record id="view_tree_anio_ui" model="ir.ui.view">
+            <field name="name">Año</field>
+            <field name="model">asw.anio</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ani_numero" />
+                    <field name="ani_inicio" />
+                    <field name="ani_fin" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_form_anio_ui" model="ir.ui.view">
+            <field name="name">Año</field>
+            <field name="model">asw.anio</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+
+                    </header>
+                    <sheet>
+                        <field name="state" invisible='1'/>
+                        <group col="4">
+                            <field name="ani_numero" colspan="4" required="1" attrs="{ 'readonly' : [('state', '=', 'procesado')] }"/>
+                            <field name="ani_inicio" readonly="1" required="1" />
+                            <field name="ani_fin" readonly="1" required="1" />
+                            <button type="object" name="generar_periodos" string="Generar Periodos" class="oe_highlight" attrs="{ 'invisible' : [('state', '=', 'procesado')] }"/>
+                        </group>
+                        
+                        <field name="ani_periodo" readonly="1">                            
+                            <tree string="Periodos" create="1" delete="1" edit="1" editable="top">
+                                <field name="name" />
+                                <field name="per_desde" />
+                                <field name="per_hasta" />
+                                <field name="per_cerrado" />
+                            </tree>                            
+                        </field>
+
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"></field>
+                            <field name="message_ids" widget="mail_thread"></field>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>

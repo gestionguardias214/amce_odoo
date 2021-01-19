@@ -1,0 +1,36 @@
+
+        <openerp>
+        <data noupdate='1'>
+        
+<record id="edema_ausentes" model="asw.edema">
+    
+    <field name='edema_nombre'>Ausentes</field>
+
+</record>
+
+<record id="edema_palpebral" model="asw.edema">
+    
+    <field name='edema_nombre'>Palpebral</field>
+
+</record>
+
+<record id="edema_m_inferiores" model="asw.edema">
+    
+    <field name='edema_nombre'>M. inferiores</field>
+
+</record>
+
+<record id="edema_sacro" model="asw.edema">
+    
+    <field name='edema_nombre'>Sacro.</field>
+
+</record>
+
+<record id="edema_anasar" model="asw.edema">
+    
+    <field name='edema_nombre'>Anasar.</field>
+
+</record>
+
+        </data>
+        </openerp> 

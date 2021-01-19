@@ -1,0 +1,88 @@
+<openerp>
+    <data>
+        <record model="ir.actions.act_window" id="asw_actualizacion_precio_list_action">
+            <field name="name">Actualizacion de precios</field>
+            <field name="res_model">asw.actualizacion_precio</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Cree el primer Actualizacion de precios</p>
+            </field>
+        </record>
+
+        <record id="view_tree_actualizacion_precio_ui" model="ir.ui.view">
+            <field name="name">Actualizacion de precios</field>
+            <field name="model">asw.actualizacion_precio</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="id" string="Nro. Interno"/>
+                    <field name="acp_grupo" />
+                    <field name="acp_fecha_desde" />
+                    <field name="acp_estado" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_form_actualizacion_precio_ui" model="ir.ui.view">
+            <field name="name">Actualizacion de precios</field>
+            <field name="model">asw.actualizacion_precio</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <field name="acp_estado" widget="statusbar"/>
+                        <button name="validar" type="object" string="Procesar" class="oe_highlight" attrs="{ 'invisible' : [('acp_estado', '=', 'validado')] }"></button>
+                        <button name="cancelar" type="object" string="Cancelar" attrs="{ 'invisible' : [('acp_estado', '=', 'borrador')] }" confirm="¿Está seguro de que quiere cancelar esta actualizacion de precio? Los cambios realizados serán eliminados"></button>
+
+                        <button type="action" class="oe_stat_button oe_highlight" id="precios" string="Ver Precios" name="%(asw_precio_categoria_list_action)d" context="{'search_default_pca_act_precio': active_id, 'default_pca_act_precio': active_id}" attrs="{ 'invisible' : [('acp_estado', '=', 'borrador')] }"/>
+                    </header>
+                    <sheet>
+                        <div attrs="{ 'invisible' : [('acp_estado', '=', 'validado')] }">
+                            <p>
+                                Seleccione los grupos sobre los cuales quiere realizar una actualizacion de precios. Se cargaran las categorias de estos grupos al presionar el boton correspondiente.
+                            </p>
+                        </div>
+                        <group string="Datos del proceso">
+                            <field name="acp_fecha_desde" attrs="{ 'readonly' : [('acp_estado', '=', 'validado')] }" />
+                            <field name="acp_grupo" widget="many2many_checkboxes" attrs="{ 'readonly' : [('acp_estado', '=', 'validado')] }"/>
+                        </group>
+
+                        <group>
+                            <button name="agregar" type="object" string="Cargar Categorias" class="oe_highlight" attrs="{ 'invisible' : [('acp_estado', '=', 'validado')] }"></button>
+                        </group >
+
+                        <group col="4" string="Opciones" attrs="{ 'invisible' : [('acp_estado', '=', 'validado')] }">
+                            <field name="acp_porcentaje" />
+                            <button name="aumentar" type="object" string="Aumentar" class="oe_highlight"></button>
+                            <button name="disminuir" type="object" string="Disminuir" class="oe_highlight"></button>
+                        </group>
+
+                        <group string="Categorias a actualizar">
+                            <field name="acp_linea_actualizacion" nolabel="1" attrs="{ 'readonly' : [('acp_estado', '=', 'validado')] }">
+                                <tree string="Categorias" create="0" delete="1" edit="1" editable="top">
+                                    <field name="lia_categoria" readonly="1"/>
+                                    <field name="lia_precio_actual" readonly="1"/>
+                                    <field name="lia_precio_nuevo" />
+                                </tree>
+                            </field>
+                        </group>
+
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"></field>
+                            <field name="message_ids" widget="mail_thread"></field>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_search_actualizacion_precio" model="ir.ui.view">
+            <field name="name">Actualizacion de precios</field>
+            <field name="model">asw.actualizacion_precio</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="id" string="ID" filter_domain="[('id', '=', self)]"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</openerp>

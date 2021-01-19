@@ -1,0 +1,14 @@
+{
+    "python.linting.pylintEnabled": false,
+    
+    "python.linting.pylintEnabled": false,
+    "python.formatting.provider": "black",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/*.pyc":true
+    }
+}

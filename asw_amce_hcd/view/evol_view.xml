@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="view_form_evol" model="ir.ui.view">
+            <field name="name">Evolucion</field>
+            <field name="model">asw.evol</field>
+            <field name="arch" type="xml">
+                <form string="Evolucion">
+                    <sheet>
+                        <group string="Descripcion">
+                            <field name="evol_nombre" />
+                            <field name="active" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_evol" model="ir.ui.view">
+            <field name="name">Evolucion</field>
+            <field name="model">asw.evol</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="evol_nombre" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_search_evol" model="ir.ui.view">
+            <field name="name">Evolucion</field>
+            <field name="model">asw.evol</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="evol_nombre" />
+                </search>
+            </field>
+        </record>
+
+        <record id="action_evol_act_window" model="ir.actions.act_window">
+            <field name="type">ir.actions.act_window</field>
+            <field name="name">Evolucion</field>
+            <field name="res_model">asw.evol</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+            <field name="target">current</field>
+        </record>
+    </data>
+</odoo>

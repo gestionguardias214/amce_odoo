@@ -1,0 +1,10 @@
+<odoo>
+    <data noupdate='0'>
+        <record id="cardio_pulso_rit_regular" model="asw.cardio_pulso">
+            <field name='nombre'>RIT. REGULAR</field>
+        </record>
+        <record id="cardio_pulso_rit_irregular" model="asw.cardio_pulso">
+            <field name='nombre'>RIT. IRREGULAR</field>
+        </record>
+    </data>
+</odoo>

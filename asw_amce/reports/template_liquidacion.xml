@@ -1,0 +1,137 @@
+<openerp>
+    <data>
+        <template id="pdfliquidacion">
+            <!-- <t t-call="report.html_container"> -->
+            <t>
+                <t t-foreach="docs" t-as="o">
+                    <t>
+                        <div class="page">
+                            <head>
+                                <style>
+                                table, th, td {
+                                    border: 1px solid black;
+                                    border-collapse: collapse;
+                                }
+                                th, td {
+                                    padding: 6px;
+                                }
+
+                                body {
+                                    font-size: large;
+                                }
+
+                                td{
+                                    font-size: small;
+                                }
+
+                                </style>
+                            </head>
+                            <body>
+                            <p style="text-align:left;">
+                            <b>Fecha:</b> <t t-esc="o.liq_fecha"/> 
+                                <span style="float:right;"><b>Periodo:</b> <t t-esc="o.liq_periodo.name"/></span>                            
+                            </p>
+                            <b>Profesional:</b> <t t-esc="o.liq_profesional.name"/>
+                            <br/><br/>
+
+                            <b>Guardias </b>
+                            <table width="100%">
+                                <tr>
+                                    <th>
+                                    Fecha
+                                    </th>
+                                    <th>
+                                    Categoria
+                                    </th>
+                                    <th>
+                                    Fecha de Inicio
+                                    </th>
+                                    <th>
+                                    Fecha de Fin
+                                    </th>
+                                    <th>
+                                    Precio
+                                    </th>
+                                    <th>
+                                    Cant. Horas
+                                    </th>
+                                    <th>
+                                    Total
+                                    </th>
+                                    <th>
+                                    Observaciones
+                                    </th>
+                                </tr>
+                                <t t-foreach="o.liq_guardia" t-as="g">
+                                    <tr>
+                                        <td>
+                                            <t t-esc="g.create_date"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="g.gua_categoria.cat_nombre"/>
+                                        </td>
+                                        <td>                                            
+                                            <span t-field="g.gua_ingreso" />                                            
+                                        </td>
+                                        <td>
+                                            <span t-field="g.gua_egreso" />
+                                        </td>
+                                        <td>
+                                            <t t-esc="g.gua_precioxhora"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="g.gua_canthoras"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="g.gua_importe"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="g.gua_observaciones"/>
+                                        </td>
+                                    </tr>
+                                </t>
+
+                                
+                            </table>
+                            <br/>
+                            <b> Detalle </b>
+                            <table width="100%">
+                                <tr>
+                                    <th>
+                                    Concepto
+                                    </th>
+
+                                    <th>
+                                    Importe
+                                    </th>
+                                </tr>
+                                <t t-foreach="o.liq_lineas" t-as="d">
+                                    <tr>
+                                        <td>
+                                            <t t-esc="d.lin_concepto.name"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="d.lin_importe"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </table>
+
+                            <br/>
+                            <b>Total:</b> <t t-esc="o.liq_importe"/>
+                            </body>
+                            <br/>
+                            <br/>
+                            <div>
+                                <p>-----------------------</p>
+                                <br/>
+                                <p>Firma</p>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</openerp>

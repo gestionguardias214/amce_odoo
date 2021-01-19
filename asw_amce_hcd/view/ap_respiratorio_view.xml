@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="view_form_resp" model="ir.ui.view">
+            <field name="name">Ap. Resp</field>
+            <field name="model">asw.ap_respiratorio</field>
+            <field name="arch" type="xml">
+                <form string="Ap. Resp">
+                    <header>
+                    </header>
+                    <sheet>
+                        <group string="Datos">
+                            <field name="resp_nombre" />
+                            <field name="opcion_doble" />
+                            <field name="active" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_resp" model="ir.ui.view">
+            <field name="name">Ap. Resp</field>
+            <field name="model">asw.ap_respiratorio</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="resp_nombre" />
+                    <field name="opcion_doble" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_search_resp" model="ir.ui.view">
+            <field name="name">Ap. Resp</field>
+            <field name="model">asw.ap_respiratorio</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="resp_nombre" />
+                </search>
+            </field>
+        </record>
+        
+        <record id="action_resp_act_window" model="ir.actions.act_window">
+            <field name="type">ir.actions.act_window</field>
+            <field name="name">Ap. Resp</field>
+            <field name="res_model">asw.ap_respiratorio</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+            <field name="target">current</field>
+        </record>
+    </data>
+</odoo>

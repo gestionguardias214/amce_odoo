@@ -1,0 +1,52 @@
+<openerp>
+    <data>
+        <record model="ir.actions.act_window" id="asw_instituciones_list_action">
+            <field name="name">Instituciones</field>
+            <field name="res_model">asw.institucion</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Cree el primer Instituciones</p>
+            </field>
+        </record>
+
+        <record id="view_tree_instituciones_ui" model="ir.ui.view">
+            <field name="name">Instituciones</field>
+            <field name="model">asw.institucion</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ins_nombre" />
+                    <field name="ins_codigo" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_form_instituciones_ui" model="ir.ui.view">
+            <field name="name">Instituciones</field>
+            <field name="model">asw.institucion</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="ins_nombre" />
+                            <field name="ins_codigo" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_search_instituciones" model="ir.ui.view">
+            <field name="name">Instituciones</field>
+            <field name="model">asw.institucion</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="ins_nombre" string="Instituciones" filter_domain="[('ins_nombre', 'ilike', self)]"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</openerp>

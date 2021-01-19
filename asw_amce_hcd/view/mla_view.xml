@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="view_form_mla" model="ir.ui.view">
+            <field name="name">Motivo de Llamado</field>
+            <field name="model">asw.mla</field>
+            <field name="arch" type="xml">
+                <form string="Motivo de Llamado">
+                    <sheet>
+                        <group string="Descripcion" col='4'>
+                            <field name="mla_nombre" />
+                            <field name="mla_codigo" />
+                            <field name="mla_color" />
+                            <field name="active" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_mla" model="ir.ui.view">
+            <field name="name">Motivo de Llamado</field>
+            <field name="model">asw.mla</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="mla_nombre" />
+                    <field name="mla_codigo" />
+                    <field name="mla_color" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_search_mla" model="ir.ui.view">
+            <field name="name">Motivo de Llamado</field>
+            <field name="model">asw.mla</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="mla_nombre" />
+                    <field name="mla_codigo" />
+                    <field name="mla_color" />
+                </search>
+            </field>
+        </record>
+
+        <record id="action_mla_act_window" model="ir.actions.act_window">
+            <field name="type">ir.actions.act_window</field>
+            <field name="name">Motivo de Llamado</field>
+            <field name="res_model">asw.mla</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+            <field name="target">current</field>
+        </record>
+    </data>
+</odoo>

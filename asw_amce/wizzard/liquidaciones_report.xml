@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="asw_report_liquidaciones_view_form" model="ir.ui.view">
+            <field name="name">Liquidaciones</field>
+            <field name="model">asw.liquidacion.report</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+
+                    </header>
+                    <sheet>
+
+                        <group>
+                            <field name="rli_periodo" string="Periodo"/>
+                            <field name="rli_tipo" />
+                        </group>
+
+                        <footer>
+                            <button name="imprimir" type="object" class="btn btn-primary" string="Procesar"/>
+                            <button name="cancel" string="Cancelar" special="cancel" class="btn btn-cancel"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="asw_report_liquidaciones_action" 
+        name="Liquidaciones" 
+        src_model="asw.liquidacion.report" 
+        res_model="asw.liquidacion.report" 
+        view_mode="form" 
+        target="new" 
+        multi="True"/>
+    </data>
+</openerp>

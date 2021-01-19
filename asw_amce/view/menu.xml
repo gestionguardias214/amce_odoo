@@ -1,0 +1,60 @@
+<openerp>
+    <data>
+        <!-- Elemento Root -->
+        <menuitem name="AMCE" id="asw_amce_root" web_icon="asw_amce,static/description/icon.png"/>
+
+        <!-- Elemento Grupe -->
+        <menuitem name="Datos" id="asw_amce_grupo_datos" parent="asw_amce_root" sequence="10" groups="module_category_asw_amce_administrador"/>
+
+        <menuitem name="Procesos" id="asw_amce_grupo_procesos" parent="asw_amce_root" sequence="20"/>
+
+        <menuitem name="Configuracion" id="asw_amce_grupo_configuracion" parent="asw_amce_root" sequence="30" groups="module_category_asw_amce_administrador"/>
+        
+        <menuitem name="Reportes" id="asw_amce_grupo_reportes" parent="asw_amce_root" sequence="40" groups="module_category_asw_amce_administrador"/>
+        
+        <!-- Procesos -->
+        <menuitem name="Proceso de liquidacion" id="asw_amce_menu_proceso_liquidacion" parent="asw_amce_grupo_procesos" action="asw_proceso_liquidacion_list_action"/>
+
+        <menuitem name="Nueva Guardia" id="asw_amce_menu_inicio_guardia" sequence="10" parent="asw_amce_grupo_procesos" action="asw_inicio_guardia_action" groups="module_category_asw_amce_administrador"/>
+        
+        <menuitem name="Finalizar Guardia" id="asw_amce_menu_fin_guardia" sequence="20" parent="asw_amce_grupo_procesos" action="asw_fin_guardia_action" groups="module_category_asw_amce_administrador"/>
+
+        <menuitem name="Presentismo" id="asw_amce_menu_presentismo" sequence="30" parent="asw_amce_grupo_procesos" action="asw_presentismo_list_action" groups="module_category_asw_amce_presentismo"/>
+
+        <menuitem name="Calculo de SAC" id="asw_amce_menu_calculo_sac" sequence="40" parent="asw_amce_grupo_procesos" action="asw_calculo_sac_list_action" groups="module_category_asw_amce_administrador"/>
+        <menuitem name="Calculo de SAC" id="asw_amce_menu_calculo_sac_liquidador" sequence="40" parent="asw_amce_grupo_procesos" action="asw_calculo_sac_list_action" groups="module_category_asw_amce_liquidador"/>
+
+        <menuitem name="Actualizacion de Precios" id="asw_amce_menu_actualizacion_precio" sequence="50" parent="asw_amce_grupo_procesos" action="asw_actualizacion_precio_list_action" groups="module_category_asw_amce_actualizador_precios"/>
+
+        <menuitem name="Turnos fabrica" id="asw_amce_menu_turno_fabrica" parent="asw_amce_grupo_procesos" sequence="60" action="asw_turno_fabrica_list_action"/>
+        
+        <menuitem name="Proceso de liquidacion" id="asw_amce_menu_proceso_liquidacion" parent="asw_amce_grupo_procesos" sequence="70" action="asw_proceso_liquidacion_list_action"/>
+        <!-- Formularios -->
+        <menuitem name="Categorias" id="asw_amce_menu_categoria" parent="asw_amce_grupo_datos" action="asw_categoria_list_action" groups="module_category_asw_amce_administrador"/>
+        <menuitem name="Profesionales" id="asw_amce_profesionales" parent="asw_amce_grupo_datos" action="asw_profesionales_list_action" groups="module_category_asw_amce_administrador"/>
+        <menuitem name="Guardias" id="asw_amce_menu_guardia" parent="asw_amce_grupo_datos" action="asw_guardia_list_action" groups="module_category_asw_amce_administrador"/>
+        <menuitem name="Concepto de Profesionales (Modificaciones)" id="asw_amce_menu_profesional_concepto" sequence="50" parent="asw_amce_grupo_datos" action="asw_profesional_concepto_list_action"/>
+        <menuitem name="Liquidaciones" id="asw_amce_menu_liquidacion" parent="asw_amce_grupo_datos" action="asw_liquidacion_list_action"/>
+
+        <menuitem name="Precios de Categoria" id="asw_amce_menu_precio_categoria" parent="asw_amce_grupo_configuracion" action="asw_precio_categoria_list_action"/>
+        <menuitem name="Fabrica" id="asw_amce_menu_fabrica" parent="asw_amce_grupo_configuracion" action="asw_fabrica_list_action"/>
+
+        <menuitem name="Años" id="asw_amce_menu_anio" sequence="10" parent="asw_amce_grupo_configuracion" action="asw_anio_list_action"/>
+        <menuitem name="Periodos" id="asw_amce_menu_periodo" sequence="20" parent="asw_amce_grupo_configuracion" action="asw_periodo_list_action"/>
+        <menuitem name="Grupos" id="asw_amce_menu_grupo" sequence="30" parent="asw_amce_grupo_configuracion" action="asw_grupo_list_action"/>
+        <menuitem name="Concepto" id="asw_amce_menu_concepto" sequence="40" parent="asw_amce_grupo_configuracion" action="asw_concepto_list_action"/>
+        
+        <menuitem name="Configuración de Parámetros" id="asw_amce_menu_configuracion" sequence="60" parent="asw_amce_grupo_configuracion" action="asw_configuracion_action"/>
+        
+        <menuitem name="Configuración del Administrador" id="asw_amce_menu_configuracion_administrador" sequence="70" parent="asw_amce_grupo_configuracion" action="asw_correcciones_admin_list_action"/>}
+                        
+        <menuitem name="Nueva Guardia" id="asw_amce_menu_inicio_guardia_data" sequence="40" parent="mail.mail_channel_menu_root_chat" action="asw_inicio_guardia_action" groups="module_category_asw_amce_data_entry"/>
+        <menuitem name="Finalizar Guardia" id="asw_amce_menu_fin_guardia_data" sequence="50" parent="mail.mail_channel_menu_root_chat" action="asw_fin_guardia_action" groups="module_category_asw_amce_data_entry"/>
+
+        <menuitem name="Liquidaciones" id="asw_amce_menu_reporte_liquidacion" sequence="10" parent="asw_amce_grupo_reportes" action="asw_report_liquidaciones_action"/>
+        <menuitem name="Grupo Fabrica" id="asw_amce_menu_reporte_grupo_fabrica" sequence="20" parent="asw_amce_grupo_reportes" action="asw_guardia_fabrica_list_action"/>
+
+        <menuitem name="COSTOS FABRICAS" id="asw_amce_menu_reporte_grupo_fabrica_reporte" sequence="20" parent="asw_amce_grupo_reportes" action="asw_reporte_guardia_fabrica_list_action"/>
+
+    </data>
+</openerp>

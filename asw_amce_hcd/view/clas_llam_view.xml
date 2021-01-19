@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="view_form_clas_llam" model="ir.ui.view">
+            <field name="name">Clasificacion Llamado</field>
+            <field name="model">asw.clas_llam</field>
+            <field name="arch" type="xml">
+                <form string="Clasificacion Llamado">
+                    <sheet>
+                        <group string="Descripcion">
+                            <field name="clas_llam_nombre" />
+                            <field name="active" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_clas_llam" model="ir.ui.view">
+            <field name="name">Clasificacion Llamado</field>
+            <field name="model">asw.clas_llam</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="clas_llam_nombre" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_search_clas_llam" model="ir.ui.view">
+            <field name="name">Clasificacion Llamado</field>
+            <field name="model">asw.clas_llam</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="clas_llam_nombre" />
+                </search>
+            </field>
+        </record>
+
+        <record id="action_clas_llam_act_window" model="ir.actions.act_window">
+            <field name="type">ir.actions.act_window</field>
+            <field name="name">Clasificacion Llamado</field>
+            <field name="res_model">asw.clas_llam</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+            <field name="target">current</field>
+        </record>
+    </data>
+</odoo>

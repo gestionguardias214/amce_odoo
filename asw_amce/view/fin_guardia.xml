@@ -1,0 +1,51 @@
+<openerp>
+    <data>
+        <record model="ir.actions.act_window" id="asw_fin_guardia_list_action">
+            <field name="name">Fin de guardia</field>
+            <field name="res_model">asw.fin_guardia</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Cree el primer Fin de guardia</p>
+            </field>
+        </record>
+
+        <record id="view_tree_fin_guardia_ui" model="ir.ui.view">
+            <field name="name">Fin de guardia</field>
+            <field name="model">asw.fin_guardia</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="fin_profesional" />
+                    <field name="fin_fechahora" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_form_fin_guardia_ui" model="ir.ui.view">
+            <field name="name">Fin de guardia</field>
+            <field name="model">asw.fin_guardia</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+
+                    </header>
+                    <sheet>                        
+                        <group>
+                            <field name="fin_profesional" />
+                            <field name="fin_fechahora" />
+                        </group>                        
+                        
+                        <footer>
+                            <button name="actualizar_fin" type="object" class="oe_stat_button oe_right" string="Actualizar datos"/>
+                            <button name="cancel" string="Cancelar" special="cancel" class="oe_link"/>
+                        </footer>
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"></field>
+                            <field name="message_ids" widget="mail_thread"></field>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>

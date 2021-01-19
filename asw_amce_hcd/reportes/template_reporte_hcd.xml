@@ -1,0 +1,354 @@
+<openerp>
+    <data>
+        <template id="reportehcd">
+            <div class='page' style="text-transform: uppercase;">
+                <t t-foreach="docs" t-as="o">
+                    <style>
+                        table, th, td {
+                            border-collapse:collapse;
+                            border-spacing: 0;
+                        }
+                        td {
+                            font-size: 10px;
+                            font-family: Helvetica
+                        }
+                        .horizontal_separator {
+                            color: #black;
+                            font-size:14;
+                            font-weight: bold;
+                        }
+                        .head_body {
+                            font-weight: bold;
+                            align-text: center
+                        }
+                        .group {
+                            width: 100%;
+                            margin: 10px;
+                        }
+                        .td_label {
+                            border-right: 1px solid #ddd;
+                            min-width: 120px;
+                            width: 0%;
+                            padding: 0 10px 0 0;
+                            font-weight: bold;
+                            font-size:12;
+                        }
+                        .td_value_4 {
+                            width: 50%;
+                            padding: 5px;
+                        }
+                        .td_value_2 {
+                            padding: 5px;
+                        }
+                        .td_firma {
+                            text-align: center
+                        }
+                        .row_sv_sg {
+                            display: inline-flex;
+                        }
+                        .tabla-datos, .tabla-datos td {
+                            margin: 5px;
+                            border: 1px solid black;
+                        }
+                        caption {
+                            font-size:12;
+                        }
+                        .td_trauma_lugar {
+                            padding: 3px;
+                        }
+                        .td_trauma_detalle {
+                            padding: 3px;
+                        }
+                    </style>
+                    
+                    <div style="float: left; display: flex">
+                        <img style="margin: 5px" src="/asw_amce_hcd/static/logo_siem.png" height="40" width="60"/>
+                        <img style="margin: 5px" src="/asw_amce_hcd/static/logo_amce.jpg" height="40" width="80"/>
+                    </div>
+
+                    <div class="head_body">
+                        <p style="text-align: center;">HISTORIA CLINICA PREHOSPITALARIA</p>
+                        <p style="text-align: center;">EMERGENCIA MÉDICA</p>
+                    </div>
+
+                    <!-- CONFIGURACION -->
+                    <div class="Datos">
+                        
+                        <table class="group">
+                            <tr colspan="2">
+                                <div class="horizontal_separator">
+                                    DETALLE
+                                </div>
+                            </tr>
+                            <tr>
+                                <td class="td_label">FECHA</td>
+                                <td class="td_value_2">
+                                <t t-esc="o.historia_fecha"/></td>
+                                <td class="td_label">MOVIL</td>
+                                <td class="td_value_2">
+                                <t t-esc="o.historia_movil_id"/></td>     
+                            </tr>
+                            <tr>
+                                <td class="td_label">CHOFER</td>
+                                <td class="td_value_2">
+                                <t t-esc="o.historia_chofer"/></td>
+                                <td class="td_label">ENFERMERO</td>
+                                <td class="td_value_2">
+                                <t t-esc="o.historia_enfermero"/></td>
+                                <td class="td_label">MEDICO</td><td class="td_value_2"><t t-esc="o.historia_medico"/></td>
+                            </tr>
+                        </table>
+                        
+                        <table class="group"> <!-- tabla de 4 columnas al estilo de odoo-->
+                            <tr colspan="4">
+                                <div class="horizontal_separator">
+                                    DATOS DEL PACIENTE
+                                </div>
+                            </tr>                        
+                            <tr>
+                                <td class="td_label">DNI</td><td class="td_value_4"><t t-esc="o.hpa_dni"/></td>
+                                <td class="td_label">NOMBRE</td><td class="td_value_4"><t t-esc="o.hpa_nombre"/></td>
+                                <td class="td_label">APELLIDO</td><td class="td_value_4"><t t-esc="o.hpa_apellido"/></td>
+                            </tr>
+                            <tr>
+                                <td class="td_label">COBERTURA</td><td class="td_value_4"><t t-esc="o.hpa_cobertura"/></td>
+                                <td class="td_label">PLAN</td><td class="td_value_4"><t t-esc="o.hpa_plan"/></td>
+                                <td class="td_label">NRO SOCIO</td><td class="td_value_4"><t t-esc="o.hpa_nro_socio"/></td>
+                            </tr>
+                            <tr>
+                                <td class="td_label">LOCALIDAD</td><td class="td_value_4"><t t-esc="o.hpa_localidad"/></td>
+                                <td class="td_label">DIRECCIÓN</td><td class="td_value_4"><t t-esc="o.hpa_calle"/> nro: <t t-esc="o.hpa_nro"/> Piso:<t t-esc="o.hpa_piso"/> Dto:<t t-esc="o.hpa_dto"/></td>                            
+                            </tr>
+                            <tr>                            
+                                <td class="td_label">INTERSECCIÓN</td><td class="td_value_4"><t t-esc="o.hpa_interseccion"/></td>
+                            </tr>
+                                <td class="td_label">ANTECEDENTES</td><td class="td_value_4"><t t-esc="o.historia_antecedentes_id"/></td>
+                            <tr>
+                            </tr>                        
+                        </table>
+
+                        <table class="group">
+                            <tr colspan="6">
+                                <div class="horizontal_separator">
+                                    DATOS DE LA Historia clinica
+                                </div>
+                            </tr>  
+                            <tr>
+                                <td lass="td_label" colspan='3'>
+                                    <table class='tabla-datos'>
+                                        <caption>Signos Vitales</caption>
+                                        <tr>
+                                            <td>Hora</td>
+                                            <td>TAS</td>
+                                            <td>TAD</td>
+                                            <td>TEMP.</td>
+                                            <td>FR. RESP.</td>
+                                            <td>FC</td>
+                                            <td>LL. CAP.</td>
+                                            <td>Glisemia</td>
+                                            <td>Sat. Oxigeno</td>
+                                        </tr>
+                                        <t t-foreach="o.historia_signos_vitales_ids" t-as="line_sv">
+                                            <tr>
+                                                <td>
+                                                    <span t-field="line_sv.hora" />
+                                                </td>
+                                                <td>
+                                                    <span t-field="line_sv.tas" />
+                                                </td>
+                                                <td> <span t-field="line_sv.tad" /></td>
+                                                <td> <span t-field="line_sv.temperatura" /></td>
+                                                <td> <span t-field="line_sv.frres" /></td>
+                                                <td> <span t-field="line_sv.fc" /></td>
+                                                <td> <span t-field="line_sv.llcap" /></td>
+                                                <td> <span t-field="line_sv.glisemia" /></td>
+                                                <td> <span t-field="line_sv.sat_oxigeno" /></td>
+                                            </tr>
+                                        </t>
+                                    </table>
+                                </td>
+                                <td>
+                                    <table class='tabla-datos'>
+                                        <caption>Score de Glasgow</caption>
+                                        <tr>
+                                            <td>Hora</td>
+                                            <td>Motora</td>
+                                            <td>Ocular</td>
+                                            <td>Verbal</td>
+                                            <td>Total</td>
+                                        </tr>
+                                        
+                                        <t t-foreach="o.historia_score_glasgow_ids" t-as="line_sg">
+                                            <tr>
+                                                <td>
+                                                <span t-field="line_sg.hora" />
+                                                </td>
+                                                <td>
+                                                <span t-field="line_sg.motora" />
+                                                </td>
+                                                <td>
+                                                <span t-field="line_sg.ocular" />
+                                                </td>
+                                                <td>
+                                                <span t-field="line_sg.verbal" />
+                                                </td>
+                                                <td>
+                                                <span t-field="line_sg.total" />
+                                                </td>
+                                            </tr>
+                                        </t>                            
+                                    </table>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td class="td_label">MOTIVO DE LLAMADO</td><td class="td_value_4"><t t-esc="o.historia_motivo_llamada_motivo"/></td>
+                                <td class="td_label">UBICACIÓN</td><td class="td_value_4"><t t-esc="o.historia_ubicacion_atencion"/></td>                            
+                            </tr>
+                            <tr>
+                                <t t-set="tiempo_evolucion" t-value="'%s Días, %s Horas, %s Minutos' % (o.historia_tiempo_dia, o.historia_tiempo_hora, o.historia_tiempo_minuto)"/>
+                                <td class="td_label">TIEMPO EVOLUCION</td><td class="td_value_4"><t t-esc="tiempo_evolucion"/></td>
+                            </tr>                      
+                            <tr>
+                                <td class="td_label">PIEL Y MUCOSA</td><td class="td_value_4"><t t-esc="o.historia_piel_mucosa"/></td>
+                            </tr>
+                            <tr>
+                                <td class="td_label">CABEZA Y CUELLO</td><td class="td_value_4"><t t-esc="o.historia_cyc"/></td>
+                                <td class="td_label">SISTEMA CARDIOVASCULAR</td><td class="td_value_4"><t t-esc="o.historia_cardio"/></td>
+                            </tr>
+                            <tr>
+                                <td class="td_label">EXAMEN NEUROLOGICO</td><td class="td_value_4"><t t-esc="o.historia_neuro"/></td>
+                                <td class="td_label">ELECTROCARDIOGRAMA</td><td class="td_value_4"><t t-esc="o.historia_ecg_desc"/></td>
+                            </tr>
+                            <tr>
+                                <td class="td_label">SISTEMA OSEOARTROMUSCULAR</td><td class="td_value_4"><t t-esc="o.historia_sist_oseoart_muscular"/></td>
+                                <td class="td_label">ABDOMEN</td><td class="td_value_4"><t t-esc="o.historia_abdomen"/></td>
+                            </tr>
+                            <tr>
+                                <td class="td_label">UROGENITAL</td><td class="td_value_4"><t t-esc="o.historia_urogen"/></td>
+                                <td class="td_label">E.C.G</td><td class="td_value_4"><t t-esc="o.historia_gco"/></td>
+                            </tr>
+                            <tr>
+                                <td class="td_label">PSIQUIATRICO</td><td class="td_value_4"><t t-esc="o.historia_psiquiatrico"/></td>
+                                <td class="td_label">SISTEMA RESPIRATORIO</td><td class="td_value_4"><t t-esc="o.historia_ap_respiratorio"/></td>
+                            </tr>                        
+                            <tr>
+                                <td class="td_label">MECANISMO</td><td class="td_value_4"><t t-esc="o.historia_mec_id"/></td>
+                                <td class="td_label">MEDICAMENTOS</td><td class="td_value_4"><t t-esc="o.historia_medicamentos"/></td>
+                            </tr>
+                            <tr>
+                                <td colspan='4'>
+                                    <table class='tabla-datos'>
+                                        <caption>Trauma</caption>                                        
+                                            <t t-foreach="o.historia_trauma_detalle_ids" t-as="line_tr">
+                                                <tr>                                            
+                                                    <td class='td_trauma_lugar'>
+                                                        <span t-field="line_tr.lugar" />
+                                                    </td>
+                                                    <td class='td_trauma_detalle'>
+                                                        <span t-field="line_tr.detalle" />
+                                                    </td>
+                                                </tr>
+                                            </t>
+                                        <!-- <tr>
+                                            <td>Observación</td>
+                                            <t t-foreach="o.historia_trauma_detalle_ids" t-as="line_tr">
+                                                <td>
+                                                </td>
+                                            </t>
+                                        </tr> -->
+                                        
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table class="group">
+                            <tr colspan="4">
+                                <div class="horizontal_separator">
+                                    DIAGNOSTICO Y EPICRISIS
+                                </div>
+                            </tr>   
+                            <tr>
+                                <td class="td_label">PROCEDIMIENTO</td><td class="td_value_4"><t t-esc="o.historia_proc"/></td>
+                                <td class="td_label">DIAGNOSTICO</td><td class="td_value_4"><t t-esc="o.historia_diagnos"/></td>
+                            </tr>                        
+                            <tr>
+                                <td class="td_label">EPICRISIS</td><td class="td_value_4" colspan='3'><t t-esc="o.historia_epicrisis"/></td>                            
+                            </tr> 
+                        </table>
+
+                        <table class="group">
+                            <tr colspan="4">
+                                <div class="horizontal_separator">
+                                    DESENLACE
+                                </div>
+                            </tr>   
+                            <tr>
+                                <td class="td_label">DESENLACE</td><td class="td_value_4"><t t-esc="o.historia_des_id"/></td>
+                                <td class="td_label">EVOLUCION</td><td class="td_value_4"><t t-esc="o.historia_evol_id"/></td>
+                            </tr>
+                            <tr>
+                                <td class="td_label">AL LLEGAR</td><td class="td_value_4"><t t-esc="o.historia_al_llegar_id"/></td>
+                            </tr>
+                            <t t-set="med_derivante" t-value="'%s Mat: %s' % (o.historia_nombre_med_derivante, o.historia_mat_med_derivante)"/>
+                            <t t-if="o.historia_nombre_med_derivante != False">
+                                <tr>
+                                    <td class="td_label">HOSPITAL</td><td class="td_value_4"><t t-esc="o.historia_hosp"/></td>
+                                    <td class="td_label">MEDICO DERIVANTE</td><td class="td_value_2"><t t-esc="med_derivante"/></td>
+                                </tr>                                
+                            </t>
+                        </table>
+                    </div>
+
+
+                    <!-- MEDICO DERIVANTE -->
+
+                    <!-- DIV PARA ALINEAR FIRMAS -->
+                    <footer style="border-top: 1px solid #ddd; min-width: 100%; margin-top: 40px; padding-top: 20px">
+                        <table style="float:right; width: 50%">
+                            <tr>
+                                <th style="width: 33%">FIRMA MEDICO</th>
+                                <th style="width: 33%">PACIENTE O ACOMPAÑANTE</th>
+                                <t t-if="o.historia_nombre_med_derivante != False">
+                                    <th style="width: 33%">MEDICO DERIVANTE</th>
+                                </t>
+                            </tr>
+                            <tr>
+                                <td class="td_firma">
+                                    <img style="margin:5px;" t-attf-src="data:image/jpeg;base64,{{o.firma}}" alt="Firma" height="80" width="160"/><br></br>
+                                </td>
+                                <td class="td_firma">
+                                    <img style="margin:5px;" t-attf-src="data:image/jpeg;base64,{{o.historia_firma_pac_acompanante}}" alt="Firma" height="80" width="160"/><br></br>
+                                </td>
+                                <t t-if="o.historia_nombre_med_derivante != False">
+                                    <td class="td_firma">
+                                        <img style="margin:5px;" t-attf-src="data:image/jpeg;base64,{{o.historia_firma_med_derivante}}" alt="Firma" height="80" width="160"/><br></br>
+                                    </td>                                    
+                                </t>
+                            </tr>
+                            <tr>
+                                <td class="td_firma">
+                                    Mat. <span t-field="o.historia_matricula_medico" />                                    
+                                </td>
+                                <td class="td_firma">
+                                    Aclaracion <span t-field="o.historia_aclaracion_pac_acompanante" /> - DNI <span t-field="o.historia_dni_pac_acompanante" />
+                                </td>
+                                <t t-if="o.historia_nombre_med_derivante != False">
+                                    <td class="td_firma">
+                                        
+                                    </td>                                    
+                                </t>
+                            </tr>
+                        </table>
+                        <div style="float: left">
+                            <h4 style="margin: 0 0 5px 0">AMCE S.A.</h4>
+                            Av San Martín 2098 (2200) <br/> 
+                            Tel: 03476 - 422422
+                        </div>
+                    </footer>
+                </t>
+            </div>
+        </template>
+    </data>
+</openerp>

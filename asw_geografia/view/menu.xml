@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">            
+        <!-- Elemento Root -->
+        <menuitem name="Geografia" id="asw_geografia_root"/>        
+
+        <!-- Elemento Grupe -->
+        <menuitem name="ABMs" id="asw_geografia_grupo_abm" parent="asw_geografia_root"/>
+        <menuitem name="Localidades" id="asw_geografia_vista_localidad" parent="asw_geografia_grupo_abm" action="asw_localidad_list_action"/>
+        <menuitem name="Provincias" id="asw_geografia_vista_provincia" parent="asw_geografia_grupo_abm" action="asw_provincia_list_action"/>
+        <menuitem name="Zonas" id="asw_geografia_vista_zona" parent="asw_geografia_grupo_abm" action="asw_zona_list_action"/>
+
+    </data>
+</odoo>

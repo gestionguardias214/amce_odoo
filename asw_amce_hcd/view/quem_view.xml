@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="view_form_quem" model="ir.ui.view">
+            <field name="name">Quemadura</field>
+            <field name="model">asw.quem</field>
+            <field name="arch" type="xml">
+                <form string="Quemadura">
+                    <header>
+                    </header>
+                    <sheet>
+                        <group string="Datos">
+                            <field name="quem_nombre" />
+                            <field name="active" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_quem" model="ir.ui.view">
+            <field name="name">Quemadura</field>
+            <field name="model">asw.quem</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="quem_nombre" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_search_quem" model="ir.ui.view">
+            <field name="name">Quemadura</field>
+            <field name="model">asw.quem</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="quem_nombre" />
+                </search>
+            </field>
+        </record>
+        
+        <record id="action_quem_act_window" model="ir.actions.act_window">
+            <field name="type">ir.actions.act_window</field>
+            <field name="name">Quemadura</field>
+            <field name="res_model">asw.quem</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+            <field name="target">current</field>
+        </record>
+    </data>
+</odoo>

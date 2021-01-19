@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="view_form_score" model="ir.ui.view">
+            <field name="name">Score de Glasgow</field>
+            <field name="model">asw.score</field>
+            <field name="arch" type="xml">
+                <form string="Score de Glasgow">
+                    <header>
+                    </header>
+                    <sheet>
+                        <group string="Datos" col="4">
+                            <field name="score_hora" /> <newline/>
+                            <field name="score_o" />
+                            <field name="score_m" />
+                            <field name="score_v" />
+                            <field name="score_total" />
+                            <field name="active" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_score" model="ir.ui.view">
+            <field name="name">Score de Glasgow</field>
+            <field name="model">asw.score</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="score_hora" />
+                    <field name="score_o" />
+                    <field name="score_m" />
+                    <field name="score_v" />
+                    <field name="score_total" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_search_score" model="ir.ui.view">
+            <field name="name">Score de Glasgow</field>
+            <field name="model">asw.score</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="score_total" />
+                </search>
+            </field>
+        </record>
+        
+        <record id="action_score_act_window" model="ir.actions.act_window">
+            <field name="type">ir.actions.act_window</field>
+            <field name="name">Score de Glasgow</field>
+            <field name="res_model">asw.score</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+            <field name="target">current</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,48 @@
+
+        <openerp>
+        <data noupdate='1'>
+        
+<record id="gco_normal" model="asw.gco">
+    
+    <field name='gco_nombre'>Normal</field>
+
+</record>
+
+<record id="gco_no_corresponde" model="asw.gco">
+    
+    <field name='gco_nombre'>No corresponde</field>
+
+</record>
+
+<record id="gco_embarazo" model="asw.gco">
+    
+    <field name='gco_nombre'>Embarazo</field>
+
+</record>
+
+<record id="gco_hemor_vaginal" model="asw.gco">
+    
+    <field name='gco_nombre'>Hemor. vaginal</field>
+
+</record>
+
+<record id="gco_amenaza_parto" model="asw.gco">
+    
+    <field name='gco_nombre'>Amenaza parto</field>
+
+</record>
+
+<record id="gco_dolor_pelviano" model="asw.gco">
+    
+    <field name='gco_nombre'>Dolor pelviano</field>
+
+</record>
+
+<record id="gco_parto_domic" model="asw.gco">
+    
+    <field name='gco_nombre'>Parto domic.</field>
+
+</record>
+
+        </data>
+        </openerp> 

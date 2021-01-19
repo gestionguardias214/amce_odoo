@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="view_form_signosecedente" model="ir.ui.view">
+            <field name="name">Signos Vitales</field>
+            <field name="model">asw.signos</field>
+            <field name="arch" type="xml">
+                <form string="Signos Vitales">
+                    <header>
+                    </header>
+                    <sheet>
+                        <group string="Datos" col="4">
+                            <field name="signos_hora" /> <newline />
+                            <field name="signos_tas" />
+                            <field name="signos_tad" />
+                            <field name="signos_temp" />
+                            <field name="signos_fr_res" />
+                            <field name="signos_f_c" />
+                            <field name="signos_ll_cap" />
+                            <field name="active" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_signos" model="ir.ui.view">
+            <field name="name">Signos Vitales</field>
+            <field name="model">asw.signos</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="signos_hora" />
+                    <field name="signos_tas" />
+                    <field name="signos_tad" />
+                    <field name="signos_temp" />
+                    <field name="signos_fr_res" />
+                    <field name="signos_f_c" />
+                    <field name="signos_ll_cap" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_search_signos" model="ir.ui.view">
+            <field name="name">Signos Vitales</field>
+            <field name="model">asw.signos</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="signos_hora" />
+                </search>
+            </field>
+        </record>
+        
+        <record id="action_signos_act_window" model="ir.actions.act_window">
+            <field name="type">ir.actions.act_window</field>
+            <field name="name">Signos Vitales</field>
+            <field name="res_model">asw.signos</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+            <field name="target">current</field>
+        </record>
+    </data>
+</odoo>

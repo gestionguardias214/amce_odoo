@@ -1,0 +1,70 @@
+<openerp>
+    <data>
+        <record model="ir.actions.act_window" id="asw_calculo_sac_list_action">
+            <field name="name">Calculo de SAC</field>
+            <field name="res_model">asw.calculo_sac</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Cree el primer calculo de SAC</p>
+            </field>
+        </record>
+
+        <record id="view_tree_calculo_sac_ui" model="ir.ui.view">
+            <field name="name">Calculo de SAC</field>
+            <field name="model">asw.calculo_sac</field>
+            <field name="arch" type="xml">
+                <tree string="Calculo de SAC" create="1" delete="1" edit="1">
+                    <field name="id" string="Nro"/>
+                    <field name="sac_semestre"/>
+                    <field name="sac_grupo"/>
+                    <field name="sac_estado" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_form_calculo_sac_ui" model="ir.ui.view">
+            <field name="name">Calculo de SAC</field>
+            <field name="model">asw.calculo_sac</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="validar" type="object" class="oe_highlight" string="Procesar" 
+                        attrs="{ 'invisible' : [('sac_estado', '!=', 'borrador' )] }"
+                        />
+                        <button name="cancelar" type="object" class="btn" attrs="{ 'invisible' : [('sac_estado', '=', 'borrador' )] }" string="Cancelar"/>
+                        <button type="action" string="Ver Liquidaciones" class="btn oe_highlight" 
+                            id="liq_button" name="%(asw_liquidacion_list_action)d" context="{'search_default_liq_sac': active_id, 'default_liq_sac': active_id}"
+                            attrs="{ 'invisible' : [('sac_estado', '=', 'borrador' )] }"/>
+                        
+                        <field name="sac_estado" widget="statusbar"/>
+                    </header>
+                    <sheet>
+
+                        <group>
+                            <field name="sac_semestre" required="1" attrs="{ 'readonly' : [('sac_estado', '!=', 'borrador' )] }"/>
+                            <field name="sac_periodo_ids" />
+                            <field name="sac_periodo" required="1" attrs="{ 'readonly' : [('sac_estado', '!=', 'borrador' )] }"/>
+                            <field name="sac_grupo" widget="many2many_checkboxes" required="1" attrs="{ 'readonly' : [('sac_estado', '!=', 'borrador' )] }"/>                            
+                        </group>
+
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"></field>
+                            <field name="message_ids" widget="mail_thread"></field>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_search_calculo_sac" model="ir.ui.view">
+            <field name="name">Calculo de SAC</field>
+            <field name="model">asw.calculo_sac</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="id" string="Nro"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</openerp>

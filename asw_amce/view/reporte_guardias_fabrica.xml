@@ -1,0 +1,90 @@
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="asw_reporte_guardia_fabrica_list_action">
+            <field name="name">Guardias de Fabrica</field>
+            <field name="res_model">asw_reporte_guardias_fabricas</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,pivot,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Cree el primer Guardias de Fabrica</p>
+            </field>
+        </record>
+        <record id="view_tree_reporte_guardia_fabrica_ui" model="ir.ui.view">
+            <field name="name">Guardias de Fabrica</field>
+            <field name="model">asw_reporte_guardias_fabricas</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="id" string="Nro"/>
+                    <field name="gua_ingreso" />
+                    <field name="gua_profesional" />
+                    <field name="gua_categoria" />
+                    <field name="gua_fabrica" />                    
+                    <field name="importe_normal" sum='1'/>
+                    <field name="importe_adicionales" sum='1'/>
+                    <field name="gua_importe_conceptos" sum='1'/>
+                    <field name="gua_importe_total" sum='1'/>
+                    <field name="gua_cnt_horas" sum='1'/>
+                    <field name="gua_horas_adicionales" sum='1'/>
+                    <field name="gua_canthoras" sum='1'/> 
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_form_reporte_guardia_fabrica_ui" model="ir.ui.view">
+            <field name="name">Guardias de Fabrica</field>
+            <field name="model">asw_reporte_guardias_fabricas</field>
+            <field name="arch" type="xml">
+                <form>                    
+                    <group>
+                        <field name="id" string="Nro"/>
+                        <field name="gua_ingreso" />
+                        <field name="gua_profesional" />
+                        <field name="gua_categoria" />
+                        <field name="gua_fabrica" />
+                        <field name="gua_canthoras" sum="1"/>                     
+                        <field name="importe_normal" sum="1"/>
+                        <field name="importe_adicionales" sum="1"/>
+                        <field name="gua_importe_conceptos" sum="1"/>
+                        <field name="gua_importe_total" sum="1"/> 
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="view_pivot_guardia_ui" model="ir.ui.view">
+            <field name="name">Guardia</field>
+            <field name="model">asw_reporte_guardias_fabricas</field>
+            <field name="type">pivot</field>
+            <field name="mode">primary</field>
+            <field name="priority" eval="16" />
+            <field name="active" eval="True" />
+            <field name="arch" type="xml">
+                <graph string="Guardia">
+                    <field name='gua_periodo'/>
+                    <field name="gua_fabrica" />
+                    <field name="importe_normal" type="measure"/>
+                    <field name="importe_adicionales" type="measure"/>
+                    <field name="gua_importe_conceptos" type="measure"/>
+                    <field name="gua_importe_total" type="measure"/>
+                    <field name="gua_cnt_horas" type="measure"/>
+                    <field name="gua_horas_adicionales" type="measure"/>
+                    <field name="gua_canthoras" type="measure"/>
+                </graph>
+            </field>
+        </record>
+        <record id="view_search_reporte_guardia_fabrica" model="ir.ui.view">
+            <field name="name">Guardias de Fabrica</field>
+            <field name="model">asw_reporte_guardias_fabricas</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="id" string="Nro" />
+                    <field name="gua_categoria" />
+                    <field name="gua_profesional" string="Profesional" filter_domain="[('gua_profesional', 'ilike', self)]"/>
+                    <field name="gua_periodo" string="Periodo" filter_domain="[('gua_periodo', 'ilike', self)]"/>
+                    <field name="gua_grupo" string="Grupo" filter_domain="[('gua_grupo', 'ilike', self)]"/>
+                    <field name="gua_ingreso" string="Fecha de Ingreso" filter_domain="[('gua_ingreso', 'ilike', self)]"/>
+                    <field name="gua_fabrica" string="Fabrica" filter_domain="[('gua_fabrica', 'ilike', self)]"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>

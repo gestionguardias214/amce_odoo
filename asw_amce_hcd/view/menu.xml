@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- Elemento Root -->
+        <menuitem name="HCD" id="asw_amce_hcd_root" web_icon="asw_amce_hcd,static/description/hcd.png" action='action_historia_act_window'/>
+
+        <!-- Elemento Grupe -->
+        <menuitem name="Datos" id="asw_grupo_datos" parent="asw_amce_hcd_root"  sequence="10"/>
+        <menuitem name="Configuración" id="asw_grupo_configuracion" parent="asw_amce_hcd_root" sequence="20"/>
+        <menuitem name="Paciente" id="asw_grupo_paciente" parent="asw_amce_hcd_root" sequence="30"/>
+        <menuitem name="Opcionales" id="asw_grupo_opcionales" parent="asw_amce_hcd_root" sequence="40"/>
+        <menuitem name="Diagnostico" id="asw_grupo_diagnostico" parent="asw_amce_hcd_root" sequence="50"/>
+        <menuitem name="Desenlace" id="asw_grupo_desenlace" parent="asw_amce_hcd_root" sequence="60"/>
+        
+        <menuitem sequence="20"
+            name="Motivo de Llamado"
+            id="asw_grupo_datos_mla"
+            parent="asw_amce_hcd_root"
+            action="action_mla_act_window"
+            />
+        
+        <menuitem sequence="10"
+            name="Paciente"
+            id="asw_datos_pac"
+            parent="asw_grupo_paciente"
+            action='action_pac_act_window'
+            />
+        
+        <menuitem sequence="20"
+            name="Cobertura"
+            id="asw_datos_cobertura"
+            parent="asw_grupo_paciente"
+            action="action_asw_cobertura_act_window"
+            />
+
+        <menuitem sequence="40"
+            name="Instituciones"
+            id="asw_datos_instituciones"
+            parent="asw_grupo_desenlace"
+            action="asw_instituciones_list_action"
+            />
+        
+        <menuitem sequence="10"
+            name="Diagnostico"
+            id="asw_datos_diagnos"
+            parent="asw_grupo_diagnostico"
+            action="action_diagnos_act_window"
+            />
+
+        <menuitem sequence="20"
+            name="Medicamentos"
+            id="asw_datos_medicamentos"
+            parent="asw_grupo_diagnostico"
+            action="action_medicamentos_act_window"
+            />
+
+        
+        
+        <menuitem sequence="30"
+            name="Usuarios de la app"
+            id="asw_datos_usuarios_app"
+            parent="asw_grupo_datos"
+            action="asw_usuario_app_list_action"
+            />
+        
+        <menuitem sequence="60"
+            name="Abdomen"
+            id="asw_datos_abdomen"
+            parent="asw_grupo_opcionales"
+            action="action_abdomen_act_window"
+            />
+
+        <menuitem sequence="30"
+            name="Al Llegar"
+            id="asw_datos_al_llegar"
+            parent="asw_grupo_desenlace"
+            action="action_al_llegar_act_window"
+            />
+
+        <menuitem sequence="30"
+            name="Antecedentes"
+            id="asw_datos_antecedentes"
+            parent="asw_grupo_paciente"
+            action="action_antecedente_act_window"
+            />
+
+         <menuitem name="AP. Cardiovascular" sequence="50" id="asw_datos_aparato_cardio" parent="asw_grupo_opcionales"/>
+
+        <menuitem sequence="10"
+            name="Ap. Cardiovascular"
+            id="asw_datos_cardio"
+            parent="asw_datos_aparato_cardio"
+            action="action_cardio_act_window"
+            />
+
+        <menuitem sequence="20"
+            name="Soplos"
+            id="asw_datos_cardio_soplo"
+            parent="asw_datos_aparato_cardio"
+            action="asw_cardio_soplo_list_action"
+            />
+
+        <menuitem sequence="30"
+            name="Ap. Pulso"
+            id="asw_datos_cardio_pulso"
+            parent="asw_datos_aparato_cardio"
+            action="asw_cardio_pulso_list_action"
+            />
+
+        <menuitem sequence="30"
+            name="Ap. Respiratorio"
+            id="asw_datos_resp"
+            parent="asw_grupo_opcionales"
+            action="action_resp_act_window"
+            />
+
+        <menuitem sequence="40"
+            name="Cabeza y Cuello"
+            id="asw_datos_cyc"
+            parent="asw_grupo_opcionales"
+            action="action_cyc_act_window"
+            />
+
+        <menuitem sequence="10"
+            name="Desenlace"
+            id="asw_datos_des"
+            parent="asw_grupo_desenlace"
+            action="action_des_act_window"
+            />
+
+        <menuitem sequence="100"
+            name="Edemas"
+            id="asw_datos_edemas"
+            parent="asw_grupo_opcionales"
+            action="action_edema_act_window"
+            />
+
+        <menuitem sequence="20"
+            name="Evolucion"
+            id="asw_datos_evol"
+            parent="asw_grupo_desenlace"
+            action="action_evol_act_window"
+            />
+
+        <menuitem name="Examen Neurologigo" sequence="20" id="asw_datos_examen_neuro" parent="asw_grupo_opcionales"/>
+
+        <menuitem sequence="10"
+            name="Examen Neurologico"
+            id="asw_datos_neuro"
+            parent="asw_datos_examen_neuro"
+            action="action_neuro_act_window"
+            />
+         <menuitem sequence="20"
+            name="Estado Mental"
+            id="asw_datos_neuro_estado_mental"
+            parent="asw_datos_examen_neuro"
+            action="asw_neuro_estado_mental_list_action"
+            />
+
+
+        <menuitem sequence="90"
+            name="Ginecobstetrico"
+            id="asw_datos_gco"
+            parent="asw_grupo_opcionales"
+            action="action_gco_act_window"
+            />
+ 
+        <menuitem sequence="150"
+            name="Mecanismo"
+            id="asw_datos_mec"
+            parent="asw_grupo_opcionales"
+            action="action_mec_act_window"
+            />
+
+        <menuitem sequence="10"
+            name="Movil"
+            id="asw_grupo_datos_moviles"
+            parent="asw_grupo_configuracion"
+            action="action_movil_act_window"
+            />       
+
+        <menuitem sequence="10"
+            name="Piel y Mucosa"
+            id="asw_datos_piel_mucosa"
+            parent="asw_grupo_opcionales"
+            action="action_piel_mucosa_act_window"
+            />
+
+        <menuitem sequence="100"
+            name="Psicologico"
+            id="asw_datos_psi"
+            parent="asw_grupo_opcionales"
+            action="action_psi_act_window"
+            />
+
+        <menuitem sequence="110"
+            name="Trauma"
+            id="asw_datos_trauma"
+            parent="asw_grupo_opcionales"
+            action="action_trauma_act_window"
+            />
+
+        <menuitem sequence="80"
+            name="Urogenital"
+            id="asw_datos_urogen"
+            parent="asw_grupo_opcionales"
+            action="action_urogen_act_window"
+            />
+
+        <menuitem sequence="10"
+            name="Historia"
+            id="asw_datos_historia"
+            parent="asw_grupo_datos"
+            action="action_historia_act_window"
+            />
+    </data>
+</odoo>

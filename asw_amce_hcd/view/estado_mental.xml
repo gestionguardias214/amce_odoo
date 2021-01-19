@@ -1,0 +1,50 @@
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="asw_neuro_estado_mental_list_action">
+            <field name="name">Estado Mental</field>
+            <field name="res_model">asw.neuro_estado_mental</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Cree el primer Estado Mental</p>
+            </field>
+            </record>
+            
+            <record id="view_tree_neuro_estado_mental_ui" model="ir.ui.view">
+            <field name="name">Estado Mental</field>
+            <field name="model">asw.neuro_estado_mental</field>
+            <field name="arch" type="xml">
+            <tree>
+                <field name="nombre" />
+            </tree>
+            </field>
+        </record>
+        
+        <record  id="view_form_neuro_estado_mental_ui" model="ir.ui.view">
+            <field name="name">Estado Mental</field>
+            <field name="model">asw.neuro_estado_mental</field>
+            <field name="arch" type="xml">
+            <form>
+            <header>
+            
+            </header>
+            <sheet>                
+                <group>
+                    <field name="nombre" />
+                </group>
+            </sheet>
+            </form>
+            </field>
+        </record>
+        
+        <record id="view_search_neuro_estado_mental" model="ir.ui.view">
+            <field name="name">Estado Mental</field>
+            <field name="model">asw.neuro_estado_mental</field>
+            <field name="arch" type="xml">
+            <search>
+                <field name="nombre" string="Estado Mental" filter_domain="[('nombre', 'ilike', self)]"/>
+            </search>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,10 @@
+<openerp>
+    <data>
+        <record id="asw_reporte_liquidacion_listado" model="ir.actions.report.xml">
+            <field name="model">asw.liquidacion.report</field>            
+            <field name="name">Listado de Liquidaciones</field>                        
+            <field name="report_name">asw_amce.listadoliquidacion</field>
+            <field name="report_type">qweb-html</field>
+        </record>
+    </data>
+</openerp>

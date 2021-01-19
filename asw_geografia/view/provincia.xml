@@ -1,0 +1,63 @@
+<openerp>
+    <data>
+        <record model="ir.actions.act_window" id="asw_provincia_list_action">
+            <field name="name">Provincia</field>
+            <field name="res_model">asw.provincia</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Cree el primer Provincia</p>
+            </field>
+            </record>
+            
+            <record id="view_tree_provincia_ui" model="ir.ui.view">
+            <field name="name">Provincia</field>
+            <field name="model">asw.provincia</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <!-- <field name="codigo" /> -->
+                    <field name="descripcion" />
+                </tree>
+            </field>
+        </record>
+        
+        <record id="view_form_provincia_ui" model="ir.ui.view">
+            <field name="name">Provincia</field>
+            <field name="model">asw.provincia</field>
+            <field name="arch" type="xml">
+            <form>
+            <header>
+            
+            </header>
+            <sheet>
+                
+                <div class="oe_title">
+                    <label for="descripcion" class="oe_edit_only" />
+                    <h1>
+                        <field name="descripcion" class="oe_inline" required="1"
+                        placeholder="Descripción" />
+                    </h1>
+                </div>
+                <group>
+                    <field name="codigo" required="0" invisible="1"/>
+                </group>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"></field>
+                    <field name="message_ids" widget="mail_thread"></field>
+                </div>
+            </sheet>
+            </form>
+            </field>
+        </record>
+        
+        <record id="view_search_provincia" model="ir.ui.view">
+            <field name="name">Provincia</field>
+            <field name="model">asw.provincia</field>
+            <field name="arch" type="xml">
+            <search>
+                <field name="name" string="Provincia" filter_domain="[('name', 'ilike', self)]"/>
+            </search>
+            </field>
+        </record>
+    </data>
+</openerp>

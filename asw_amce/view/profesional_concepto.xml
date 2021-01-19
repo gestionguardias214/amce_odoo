@@ -1,0 +1,86 @@
+<openerp>
+    <data>
+        <record model="ir.actions.act_window" id="asw_profesional_concepto_list_action">
+            <field name="name">Concepto de profesionales</field>
+            <field name="res_model">asw.profesional_concepto</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Cree el primer Concepto de profesionales</p>
+            </field>
+        </record>
+
+        <record id="view_tree_profesional_concepto_ui" model="ir.ui.view">
+            <field name="name">Concepto de profesionales</field>
+            <field name="model">asw.profesional_concepto</field>
+            <field name="arch" type="xml">
+                <tree create="1">
+                    <field name="id" string="Nro"/>
+                    <field name="prc_periodo" />
+                    <field name="prc_concepto" />
+                    <field name="prc_descripcion" />
+                    <field name="prc_importe" sum='1'/>
+                    <field name="prc_profesional" />
+                    <field name="prc_liquidacion" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_form_profesional_concepto_ui" model="ir.ui.view">
+            <field name="name">Concepto de profesionales</field>
+            <field name="model">asw.profesional_concepto</field>
+            <field name="arch" type="xml">
+                <form edit="1" create="1">
+                    <header>
+
+                    </header>
+                    <sheet>
+                            <field name="prc_posee_liquidacion" invisible="1"/>
+                        <group col="4">
+                            <field name="prc_descripcion" colspan="4" required="1" attrs="{ 'readonly' : [('prc_posee_liquidacion', '=', True)] }"/>
+                            <field name="prc_profesional" required="1" attrs="{ 'readonly' : [('prc_posee_liquidacion', '=', True)] }"/>
+                            <field name="prc_concepto" required="1" attrs="{ 'readonly' : [('prc_posee_liquidacion', '=', True)] }"/>
+                            <field name="prc_importe" required="1" attrs="{ 'readonly' : [('prc_posee_liquidacion', '=', True)] }"/>
+                            <field name="prc_periodo" required="1" attrs="{ 'readonly' : [('prc_posee_liquidacion', '=', True)] }"/>
+                            <field name="prc_liquidacion" readonly="1"/>
+                            <field name="prc_tipo" readonly="1"/>
+                        </group>
+
+                        
+                        <group string="Presentismo" attrs="{ 'invisible' : [('prc_tipo', '!=', 'presentismo')] }">
+                            <field name="prc_categoria"  attrs="{ 'readonly' : [('prc_posee_liquidacion', '=', True)] }"/>
+                            <field name="prc_porcentaje"  attrs="{ 'readonly' : [('prc_posee_liquidacion', '=', True)] }"/>
+                            <field name="prc_guardias" attrs="{ 'readonly' : [('prc_posee_liquidacion', '=', True)] }">                                
+                                <tree string="Caption" create="0" delete="0" edit="0">
+                                    <field name="id" />
+                                    <field name="gua_profesional" />
+                                    <field name="gua_categoria" />
+                                    <field name="gua_importe" sum="1" />
+                                    <field name="gua_observaciones" />
+                                </tree>                                
+                            </field>
+                        </group>
+                        
+                        
+
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"></field>
+                            <field name="message_ids" widget="mail_thread"></field>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_search_profesionales_conceptos" model="ir.ui.view">
+            <field name="name">Conceptos de profesionales</field>
+            <field name="model">asw.profesional_concepto</field>
+            <field name="arch" type="xml">
+            <search>
+                <field name="id" string='Nro'/>
+                <field name="prc_profesional" />
+            </search>
+            </field>
+        </record>
+    </data>
+</openerp>

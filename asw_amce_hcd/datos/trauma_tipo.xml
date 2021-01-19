@@ -1,0 +1,78 @@
+
+        <openerp>
+        <data noupdate='1'>
+        
+<record id="trauma_tipo_dolor" model="asw.trauma_tipo">
+    
+    <field name='trauma_tipo_nombre'>Dolor</field>
+
+</record>
+
+<record id="trauma_tipo_deformacion" model="asw.trauma_tipo">
+    
+    <field name='trauma_tipo_nombre'>Deformacion</field>
+
+</record>
+
+<record id="trauma_tipo_contusion_hematoma" model="asw.trauma_tipo">
+    
+    <field name='trauma_tipo_nombre'>Contusion/hematoma</field>
+
+</record>
+
+<record id="trauma_tipo_perdida_de_mobilidad" model="asw.trauma_tipo">
+    
+    <field name='trauma_tipo_nombre'>Perdida de mobilidad</field>
+
+</record>
+
+<record id="trauma_tipo_perdida_de_sensibilidad" model="asw.trauma_tipo">
+    
+    <field name='trauma_tipo_nombre'>Perdida de sensibilidad</field>
+
+</record>
+
+<record id="trauma_tipo_laceracion_abrasion" model="asw.trauma_tipo">
+    
+    <field name='trauma_tipo_nombre'>Laceracion/abrasion</field>
+
+</record>
+
+<record id="trauma_tipo_herida_cortante_penetrante" model="asw.trauma_tipo">
+    
+    <field name='trauma_tipo_nombre'>Herida cortante/penetrante</field>
+
+</record>
+
+<record id="trauma_tipo_trauma_cerrado" model="asw.trauma_tipo">
+    
+    <field name='trauma_tipo_nombre'>Trauma cerrado</field>
+
+</record>
+
+<record id="trauma_tipo_luxacion_esguince" model="asw.trauma_tipo">
+    
+    <field name='trauma_tipo_nombre'>Luxacion/esguince</field>
+
+</record>
+
+<record id="trauma_tipo_fractura" model="asw.trauma_tipo">
+    
+    <field name='trauma_tipo_nombre'>Fractura</field>
+
+</record>
+
+<record id="trauma_tipo_amputacion" model="asw.trauma_tipo">
+    
+    <field name='trauma_tipo_nombre'>Amputacion</field>
+
+</record>
+
+<record id="trauma_tipo_hemorragia" model="asw.trauma_tipo">
+    
+    <field name='trauma_tipo_nombre'>Hemorragia</field>
+
+</record>
+
+        </data>
+        </openerp> 

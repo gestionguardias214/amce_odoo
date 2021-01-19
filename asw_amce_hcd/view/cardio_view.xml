@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="view_form_cardio" model="ir.ui.view">
+            <field name="name">Aparato Cardiovascular</field>
+            <field name="model">asw.cardio</field>
+            <field name="arch" type="xml">
+                <form string="Aparato Cardiovascular">
+                    <sheet>
+                        <group string="Descripcion" col='4'>
+                            <field name="cardio_nombre" />
+                            <field name="active" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_cardio" model="ir.ui.view">
+            <field name="name">Aparato Cardiovascular</field>
+            <field name="model">asw.cardio</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="cardio_nombre" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_search_cardio" model="ir.ui.view">
+            <field name="name">Aparato Cardiovascular</field>
+            <field name="model">asw.cardio</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="cardio_nombre" />
+                </search>
+            </field>
+        </record>
+
+        <record id="action_cardio_act_window" model="ir.actions.act_window">
+            <field name="type">ir.actions.act_window</field>
+            <field name="name">Aparato Cardiovascular</field>
+            <field name="res_model">asw.cardio</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+            <field name="target">current</field>
+        </record>
+    </data>
+</odoo>

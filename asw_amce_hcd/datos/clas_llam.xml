@@ -1,0 +1,30 @@
+
+        <openerp>
+        <data noupdate='1'>
+        
+<record id="clas_llam_emergencia" model="asw.clas_llam">
+    
+    <field name='clas_llam_nombre'>Emergencia</field>
+
+</record>
+
+<record id="clas_llam_urgencia" model="asw.clas_llam">
+    
+    <field name='clas_llam_nombre'>Urgencia</field>
+
+</record>
+
+<record id="clas_llam_consulta" model="asw.clas_llam">
+    
+    <field name='clas_llam_nombre'>Consulta</field>
+
+</record>
+
+<record id="clas_llam_traslado" model="asw.clas_llam">
+    
+    <field name='clas_llam_nombre'>Traslado</field>
+
+</record>
+
+        </data>
+        </openerp> 

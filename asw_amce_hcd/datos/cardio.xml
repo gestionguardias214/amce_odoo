@@ -1,0 +1,26 @@
+        
+<openerp>
+    <data noupdate='1'>
+        <record id="cardio_normal" model="asw.cardio">
+            <field name='cardio_nombre'>Normal</field>
+        </record>
+        <record id="cardio_paro_card" model="asw.cardio">
+            <field name='cardio_nombre'>Paro card.</field>
+        </record>
+        <record id="cardio_ing_yug" model="asw.cardio">
+            <field name='cardio_nombre'>Ing. yug.</field>
+        </record>
+        <record id="cardio_ruidos_hipofoneticos" model="asw.cardio">
+            <field name='cardio_nombre'>Ruidos hipofoneticos</field>
+        </record>
+        <record id="cardio_r3" model="asw.cardio">
+            <field name='cardio_nombre'>R3</field>
+        </record>
+        <record id="cardio_galope" model="asw.cardio">
+            <field name='cardio_nombre'>Galope</field>
+        </record>
+        <record id="cardio_frote_per" model="asw.cardio">
+            <field name='cardio_nombre'>Frote per.</field>
+        </record>               
+    </data>
+</openerp> 

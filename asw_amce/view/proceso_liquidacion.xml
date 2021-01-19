@@ -1,0 +1,80 @@
+<openerp>
+    <data>
+        <record model="ir.actions.act_window" id="asw_proceso_liquidacion_list_action">
+            <field name="name">Proceso liquidacion</field>
+            <field name="res_model">asw.proceso_liquidacion</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Cree el primer Proceso liquidacion</p>
+            </field>
+        </record>
+
+        <record id="view_tree_proceso_liquidacion_ui" model="ir.ui.view">
+            <field name="name">Proceso liquidacion</field>
+            <field name="model">asw.proceso_liquidacion</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="prl_periodo" />
+                    <field name="prl_tipo" />
+                    <field name="prl_grupo" />
+                    <field name="prl_pro_especifico" />
+                    <field name="state" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_form_proceso_liquidacion_ui" model="ir.ui.view">
+            <field name="name">Proceso liquidacion</field>
+            <field name="model">asw.proceso_liquidacion</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="validar" type="object" string="Procesar" class="oe_highlight" attrs="{ 'invisible' : [('state', '=', 'validado')] }"></button>
+                        <button name="cancelar" type="object" string="Cancelar" attrs="{ 'invisible' : [('state', '=', 'borrador')] }"></button>
+
+                        <field name="state" widget="statusbar"/>
+                        <button type="action" class="oe_stat_button oe_highlight" id="liquidaciones" string="Ver Liquidaciones" name="%(asw_liquidacion_list_action)d" context="{'search_default_liq_proc_id': active_id, 'default_liq_proc_id': active_id}" attrs="{ 'invisible' : [('state', '=', 'borrador')] }"/>
+                    </header>
+                    <sheet>
+
+                        <div>
+                            <p>Seleccione un periodo y algun/os grupo/s, y presione el boton de cargar los profesionales con las caracteristicas seleccionadas.</p>
+                        </div>
+                        <group col="4" >
+                            <field name="prl_tipo" widget="radio" colspan="2" attrs="{ 'readonly' : [('state', '=', 'validado')] }"/>
+                            
+                            <group string="Masivo" colspan="3" attrs="{ 'invisible' : [('prl_tipo','=', 'especifico')] }">
+                                <field name="prl_periodo" colspan="2" attrs="{ 'required' : [('prl_tipo','=', 'masivo')], 'readonly' : [('state', '=', 'validado')] }"/>
+                                <field name="prl_grupo" widget="many2many_checkboxes" colspan="2" attrs="{ 'required' : [('prl_tipo','=', 'masivo')], 'readonly' : [('state', '=', 'validado')]}"/>
+                                
+                                <button name="cargar" type="object" string="Cargar Profesionales" colspan="3" class="oe_highlight" attrs="{ 'invisible' : [('state','=', 'validado')] }"></button>
+                                <field name="prl_profesional" colspan="2" nolabel="1" attrs="{ 'readonly' : [('state', '=', 'validado')] }">
+                                    <tree string="Profesionales" create="0" delete="1" edit="0" editable="top">
+                                        <field name="name" />
+                                        <field name="pro_matricula" />
+                                        <field name="phone" />
+                                        <field name="email" />
+                                        <field name="pro_grupo" />
+                                    </tree>
+                                </field>                            
+                            </group>
+                            
+                            <group string="Especifico" colspan="3" col="4" attrs="{ 'invisible' : [('prl_tipo','=', 'masivo')] }">
+                                <field name="prl_fecha_desde" attrs="{ 'required' : [('prl_tipo','=', 'especifico')] }"/>
+                                <field name="prl_fecha_hasta" attrs="{ 'required' : [('prl_tipo','=', 'especifico')] }"/>
+                                <field name="prl_pro_especifico" attrs="{ 'required' : [('prl_tipo','=', 'especifico')] }"/>
+                            </group>
+                        </group>
+
+
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"></field>
+                            <field name="message_ids" widget="mail_thread"></field>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>

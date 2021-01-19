@@ -1,0 +1,27 @@
+<openerp>
+    <data>
+        <record  id="view_form_asw_linea_actualizacion_ui" model="ir.ui.view">
+            <field name="name">asw.linea_actualizacion</field>
+            <field name="model">asw.linea_actualizacion</field>
+            <field name="arch" type="xml">
+            <form>
+            <header>
+            
+            </header>
+            <sheet>                
+                <group>
+                    <field name="lia_categoria" readonly="1"/>
+                    <field name="lia_precio_actual" readonly="1"/>
+                    <field name="lia_precio_nuevo" readonly="1"/>
+                </group>                
+                
+                <div  class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"></field>
+                    <field name="message_ids" widget="mail_thread"></field>
+                </div>
+            </sheet>
+            </form>
+            </field>
+        </record>        
+    </data>
+</openerp>

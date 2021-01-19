@@ -1,0 +1,131 @@
+<openerp>
+    <data>
+        <record model="ir.actions.act_window" id="asw_liquidacion_list_action">
+            <field name="name">Liquidacion</field>
+            <field name="res_model">asw.liquidacion</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Cree la primera Liquidacion</p>
+            </field>
+        </record>
+
+        <record id="view_tree_liquidacion_ui" model="ir.ui.view">
+            <field name="name">Liquidacion</field>
+            <field name="model">asw.liquidacion</field>
+            <field name="arch" type="xml">
+                <tree colors="green:liq_estado_mail=='sent';red:liq_estado_mail=='exception'">
+                    <field name="id" string="Nro"/>
+                    <field name="liq_profesional" />
+                    <field name="liq_periodo" />
+                    <field name="liq_fecha" />
+                    <field name="liq_importe" sum="True"/>                    
+                    <field name="liq_tipo" />
+                    <field name="liq_monto_aplicable_sac" />   
+                    <field name="liq_estado_mail" />              
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_form_liquidacion_ui" model="ir.ui.view">
+            <field name="name">Liquidacion</field>
+            <field name="model">asw.liquidacion</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        
+                        <button name="enviar_mail" string="Enviar Mail" type="object" class="oe_highlight"/>
+                        
+                        <button type="object" name="invoice_print" class="oe_highlight" string="Imprimir"></button>                        
+                        <button type="action" string="Ver Guardias" class="oe_stat_button" id="guardia_button" name="%(asw_guardia_list_action)d" context="{'search_default_gua_liquidacion': active_id, 'default_gua_liquidacion': active_id}">                            
+                        </button>
+                    </header>
+                    <sheet>
+                        <div>
+                        </div>
+
+                        <group col="4">
+                            <field name="liq_fecha" colspan="2" String="Fecha" attrs="{ 'readonly': [('liq_periodo_cerrado', '=', True)] }"/>
+                            <field name="liq_periodo" colspan="2" string="Periodo" attrs="{ 'readonly': [('liq_periodo_cerrado', '=', True)] }"/>
+
+                            <field name="liq_profesional" attrs="{ 'readonly': [('liq_periodo_cerrado', '=', True)] }"/>
+                            <field name="liq_semestre" attrs="{ 'readonly': [('liq_periodo_cerrado', '=', True)] }"/>
+                            <field name="liq_tipo" readonly="1"/>
+                            <field name="liq_liquidaciones_sac" attrs="{ 'invisible': [('liq_tipo', '=', 'sac')] }"/>
+                            <field name="liq_periodo_cerrado" invisible="1"/>
+                            <field name="liq_ult_mail" readonly="1"/>
+                        </group>
+
+                        
+                        <group string="Liquidaciones" attrs="{ 'invisible': [('liq_tipo', '!=', 'sac')] }">                        
+                                <field name="liq_liq_sac_ids" nolabel="1">
+                                    <tree string="Caption" create="0" delete="0" edit="0" editable="top">                        
+                                        <field name="id" string="Nro"/>
+                                        <field name="liq_periodo" />
+                                        <field name="liq_semestre" />
+                                        <field name="liq_monto_aplicable_sac" sum="True"/>
+                                    </tree>
+                                </field>                            
+                        </group>
+                        
+                        
+
+                        <group string="Guardias" attrs="{ 'invisible': [('liq_tipo', '=', 'sac')] }">
+                            <field name="liq_guardia" nolabel="1">
+                                <tree create="0" delete="0" edit="0">
+                                    <field name="create_date" string="Fecha"/>
+                                    <field name="create_uid" string="Usuario de Inicio"/>
+                                    <field name="gua_usu_fin" />
+                                    <field name="gua_categoria" />
+                                    <field name="gua_ingreso" />
+                                    <field name="gua_egreso" />
+                                    <field name="gua_precioxhora" />
+                                    <field name="gua_canthoras" />
+                                    <field name="gua_importe" sum="1"/>
+                                    <field name="gua_observaciones" />
+                                </tree>                                
+                            </field>
+                        </group>
+
+                        <group string="Conceptos">
+                            <field name="liq_lineas" nolabel="1" colspan="3" attrs="{ 'readonly': [('liq_periodo_cerrado', '=', True)] }">
+                                <tree string="Lineas" create="1" delete="1" edit="1" editable="bottom">
+                                    <field name="lin_concepto" />
+                                    <field name="lin_descripcion" />
+                                    <field name="lin_importe" sum="1"/>
+                                    <field name="lin_concepto_en_sac" />
+                                </tree>
+                            </field>                       
+                        </group>
+
+                    
+
+                        <group>
+                            <field name="liq_importe" string="Total" widget="monetary"/>
+                        </group>
+
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"></field>
+                            <field name="message_ids" widget="mail_thread"></field>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_search_liquidacion" model="ir.ui.view">
+            <field name="name">Liquidacion</field>
+            <field name="model">asw.liquidacion</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="id" string="Nro"/>
+                    <field name="liq_profesional" string="Profesional" filter_domain="[('liq_profesional', 'ilike', self)]"/>
+                    <field name="liq_sac"/>
+                    <field name="liq_periodo" />
+                    <field name="liq_grupo" />
+                    <field name="liq_proc_id" />                    
+                </search>
+            </field>
+        </record>
+    </data>
+</openerp>

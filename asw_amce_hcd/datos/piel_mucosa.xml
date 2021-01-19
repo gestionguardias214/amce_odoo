@@ -1,0 +1,54 @@
+
+        <openerp>
+        <data noupdate='1'>
+        
+<record id="piel_mucosa_secas" model="asw.piel_mucosa">
+    
+    <field name='piel_mucosa_nombre'>Secas</field>
+
+</record>
+
+<record id="piel_mucosa_palida" model="asw.piel_mucosa">
+    
+    <field name='piel_mucosa_nombre'>Palida</field>
+
+</record>
+
+<record id="piel_mucosa_cianos" model="asw.piel_mucosa">
+    
+    <field name='piel_mucosa_nombre'>Cianos</field>
+
+</record>
+
+<record id="piel_mucosa_rubic" model="asw.piel_mucosa">
+    
+    <field name='piel_mucosa_nombre'>Rubic</field>
+
+</record>
+
+<record id="piel_mucosa_sudor" model="asw.piel_mucosa">
+    
+    <field name='piel_mucosa_nombre'>Sudor</field>
+
+</record>
+
+<record id="piel_mucosa_normal" model="asw.piel_mucosa">
+    
+    <field name='piel_mucosa_nombre'>Normal</field>
+
+</record>
+
+<record id="piel_mucosa_lividec" model="asw.piel_mucosa">
+    
+    <field name='piel_mucosa_nombre'>Lividec.</field>
+
+</record>
+
+<record id="piel_mucosa_octeric" model="asw.piel_mucosa">
+    
+    <field name='piel_mucosa_nombre'>Octeric.</field>
+
+</record>
+
+        </data>
+        </openerp> 

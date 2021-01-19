@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="view_form_al_llegar" model="ir.ui.view">
+            <field name="name">Al llegar al domicilio</field>
+            <field name="model">asw.al_llegar</field>
+            <field name="arch" type="xml">
+                <form string="Al llegar al domicilio">
+                    <sheet>
+                        <group string="Descripcion">
+                            <field name="al_llegar_nombre" />
+                            <field name="active" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_al_llegar" model="ir.ui.view">
+            <field name="name">Al llegar al domicilio</field>
+            <field name="model">asw.al_llegar</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="al_llegar_nombre" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_search_al_llegar" model="ir.ui.view">
+            <field name="name">Al llegar al domicilio</field>
+            <field name="model">asw.al_llegar</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="al_llegar_nombre" />
+                </search>
+            </field>
+        </record>
+
+        <record id="action_al_llegar_act_window" model="ir.actions.act_window">
+            <field name="type">ir.actions.act_window</field>
+            <field name="name">Al llegar al domicilio</field>
+            <field name="res_model">asw.al_llegar</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+            <field name="target">current</field>
+        </record>
+    </data>
+</odoo>

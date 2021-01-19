@@ -1,0 +1,50 @@
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="asw_cardio_soplo_list_action">
+            <field name="name">SOPLOS</field>
+            <field name="res_model">asw.cardio_soplo</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Cree el primer SOPLO</p>
+            </field>
+            </record>
+            
+            <record id="view_tree_cardio_soplo_ui" model="ir.ui.view">
+            <field name="name">SOPLOS</field>
+            <field name="model">asw.cardio_soplo</field>
+            <field name="arch" type="xml">
+            <tree>
+                <field name="nombre" />
+            </tree>
+            </field>
+        </record>
+        
+        <record  id="view_form_cardio_soplo_ui" model="ir.ui.view">
+            <field name="name">SOPLOS</field>
+            <field name="model">asw.cardio_soplo</field>
+            <field name="arch" type="xml">
+            <form>
+            <header>
+            
+            </header>
+            <sheet>                
+                <group>
+                    <field name="nombre" />
+                </group>
+            </sheet>
+            </form>
+            </field>
+        </record>
+        
+        <record id="view_search_cardio_soplo" model="ir.ui.view">
+            <field name="name">SOPLOS</field>
+            <field name="model">asw.cardio_soplo</field>
+            <field name="arch" type="xml">
+            <search>
+                <field name="nombre" string="SOPLOS" filter_domain="[('nombre', 'ilike', self)]"/>
+            </search>
+            </field>
+        </record>
+    </data>
+</odoo>

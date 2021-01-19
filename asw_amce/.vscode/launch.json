@@ -1,0 +1,66 @@
+{
+    // Utilizar IntelliSense para aprender acerca de los posibles atributos.
+    // Mantenga el puntero para ver las descripciones de los existentes atributos 
+    // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python odoo 10 - Adrian",
+            "type": "python",
+            "request": "launch",
+            "stopOnEntry": false,
+            "python": "${command:python.interpreterPath}",
+            //"program": "${file}", use this to debug opened file.
+            "program": "/home/administrador/odoo10/odoo-bin",
+            "args": [
+            "-d amce_adrian -u asw_amce",
+            "--db-filter=amce_adrian",
+            "--config=/home/administrador/config10",
+            ],
+            "cwd": "${workspaceRoot}",
+            "console": "integratedTerminal",
+            "debugOptions": [
+                "RedirectOutput"
+            ]
+        },
+        {
+            "name": "Python odoo 10 - Ramiro",
+            "type": "python",
+            "request": "launch",
+            "stopOnEntry": false,
+            "python": "${command:python.interpreterPath}",
+            //"program": "${file}", use this to debug opened file.
+            "program": "/home/ramiro/odoo10/odoo-bin",
+            "args": [
+            "-d amce_ramiro",
+            "--db-filter=amce_ramiro",
+            "--config=/home/ramiro/config10",
+            "-u ${workspaceRoot}"
+            ],
+            "cwd": "${workspaceRoot}",
+            "console": "integratedTerminal",
+            "debugOptions": [
+                "RedirectOutput"
+            ]
+        },
+        {
+            "name": "Python odoo 10 - Nahuel",
+            "type": "python",
+            "request": "launch",
+            "stopOnEntry": false,
+            "python": "${command:python.interpreterPath}",
+            //"program": "${file}", use this to debug opened file.
+            "program": "/home/nahuel/odoo10/odoo-bin",
+            "args": [
+            "-d amce_nahuel -u asw_amce",
+            "--db-filter=amce_nahuel",
+            "--config=/home/nahuel/config10",
+            ],
+            "cwd": "${workspaceRoot}",
+            "console": "integratedTerminal",
+            "debugOptions": [
+                "RedirectOutput"
+            ]
+        }
+    ]
+}

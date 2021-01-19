@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_asw_localidad,asw_localidad,model_asw_localidad,,1,1,1,1
+access_asw_provincia,asw_provincia,model_asw_provincia,,1,1,1,1
+access_asw_zona,asw_zona,model_asw_zona,,1,1,1,1

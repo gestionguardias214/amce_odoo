@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="view_form_pac" model="ir.ui.view">
+            <field name="name">Paciente</field>
+            <field name="model">asw.paciente</field>
+            <field name="arch" type="xml">
+                <form string="Paciente">
+                    <header>
+                        <button name="actualizar_antecedentes" string="Actualizar Antecedentes" type="object" class="oe_highlight"/>
+                    </header>
+                    <sheet>                        
+                        <group string="Datos personales" col="4">
+                            <field name="pac_nombre" /> 
+                            <field name="pac_apellido" /> 
+                            <field name="pac_tel" />
+                            <field name="pac_dni" />
+                            <field name="pac_nro_socio" />
+                            <field name="pac_antecedentes" />
+                            <field name="active" />
+                        </group>
+                        <group string="Domicilio" col="4">
+                            <field name="pac_calle" />
+                            <field name="pac_nro" />
+                            <field name="pac_piso" />
+                            <field name="pac_dto" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_pac" model="ir.ui.view">
+            <field name="name">Paciente</field>
+            <field name="model">asw.paciente</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="pac_nombre" />
+                    <field name="pac_tel" />
+                    <field name="pac_dni" />
+                    <field name="pac_nro_socio" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_search_pac" model="ir.ui.view">
+            <field name="name">Paciente</field>
+            <field name="model">asw.paciente</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="pac_nombre" />
+                    <field name="pac_dni" />
+                    <field name="pac_nro_socio" />
+                </search>
+            </field>
+        </record>
+        
+        <record id="action_pac_act_window" model="ir.actions.act_window">
+            <field name="type">ir.actions.act_window</field>
+            <field name="name">Paciente</field>
+            <field name="res_model">asw.paciente</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+            <field name="target">current</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,82 @@
+<openerp>
+    <data>
+        <record model="ir.actions.act_window" id="asw_turno_fabrica_list_action">
+            <field name="name">Turnos fabrica</field>
+            <field name="res_model">asw.turno_fabrica</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Cree el primer Turnos fabrica</p>
+            </field>
+        </record>
+
+        <record id="view_tree_turno_fabrica_ui" model="ir.ui.view">
+            <field name="name">Turnos fabrica</field>
+            <field name="model">asw.turno_fabrica</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="id" string="Nro"/>
+                    <field name="tuf_fabrica" />
+                    <field name="tuf_fecha" />
+                    <field name="tuf_cantdias" />
+                    <field name="tuf_estado" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_form_turno_fabrica_ui" model="ir.ui.view">
+            <field name="name">Turnos fabrica</field>
+            <field name="model">asw.turno_fabrica</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="validar" type="object" string="Procesar" class="oe_highlight" attrs="{ 'invisible' : [('tuf_estado', '=', 'validado')] }"/>
+                        <button name="cancelar" type="object" string="Cancelar" attrs="{ 'invisible' : [('tuf_estado', '=', 'borrador')] }"/>
+                        <field name="tuf_estado" widget="statusbar"/>
+                        <button type="action" class="oe_stat_button oe_highlight" id="guardia_button" string="Ver Guardias" name="%(asw_guardia_list_action)d" context="{'search_default_gua_tuf': active_id, 'default_gua_tuf': active_id}" attrs="{ 'invisible' : [('tuf_estado', '=', 'borrador')] }"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="tuf_fabrica" required="1" attrs="{ 'readonly' : [('tuf_estado', '=', 'validado')] }"/>
+                        </group>
+                        <group col="4">
+                            <field name="tuf_fecha" required="1" attrs="{ 'readonly' : [('tuf_estado', '=', 'validado')] }"/>
+                            <field name="tuf_cantdias" required="1" attrs="{ 'readonly' : [('tuf_estado', '=', 'validado')] }"/>
+                            <field name="tuf_refuerzo" />
+                            <button name="calcular" type="object" string="Calcular dias" class="oe_highlight oe_right" attrs="{ 'invisible' : [('tuf_estado', '=', 'validado')] }"/>
+                        </group>
+
+                        <group>
+                            <field name="tuf_lineas_turno_fabrica" nolabel="1" attrs="{ 'readonly' : [('tuf_estado', '=', 'validado')] }">
+                                <tree string="Lineas" create="1" delete="1" edit="1" editable="bottom" limit='1000'>                                                                        
+                                    <field name="ltf_fecha" readonly="1" invisible="1"/>                                    
+                                    <field name="ltf_fecha_inicio" readonly="0"/>
+                                    <field name="ltf_fecha_fin" readonly="0"/>                                    
+                                    <field name="ltf_profesional" />
+                                    <field name="ltf_categoria" />
+                                    <field name="ltf_refuerzo" />
+                                    <field name="ltf_canthoras" rwidget="float_time"/>
+                                    <field name="ltf_precio" readonly="1"/>
+                                    <field name="ltf_importe" readonly="1"/>
+                                    <field name="ltf_vianda" />
+                                    <field name="ltf_viatico" />
+                                    <field name="ltf_total" readonly="1"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_search_turno_fabrica" model="ir.ui.view">
+            <field name="name">Turno de Fábrica</field>
+            <field name="model">asw.turno_fabrica</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="id" string="Nro" />
+                </search>
+            </field>
+        </record>
+    </data>
+</openerp>

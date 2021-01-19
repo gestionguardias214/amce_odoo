@@ -1,0 +1,24 @@
+
+        <openerp>
+        <data noupdate='1'>
+        
+<record id="cyc_no_corresponde" model="asw.cyc">
+    
+    <field name='cyc_nombre'>No corresponde</field>
+
+</record>
+
+<record id="cyc_normal" model="asw.cyc">
+    
+    <field name='cyc_nombre'>Normal</field>
+
+</record>
+
+<record id="cyc_epistaxis" model="asw.cyc">
+    
+    <field name='cyc_nombre'>Epistaxis</field>
+
+</record>
+
+        </data>
+        </openerp> 

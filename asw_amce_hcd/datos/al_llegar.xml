@@ -1,0 +1,36 @@
+
+        <openerp>
+        <data noupdate='1'>
+        
+<record id="al_llegar_medico" model="asw.al_llegar">
+    
+    <field name='al_llegar_nombre'>Medico</field>
+
+</record>
+
+<record id="al_llegar_auxiliar" model="asw.al_llegar">
+    
+    <field name='al_llegar_nombre'>Auxiliar</field>
+
+</record>
+
+<record id="al_llegar_ninguno" model="asw.al_llegar">
+    
+    <field name='al_llegar_nombre'>Ninguno</field>
+
+</record>
+
+<record id="al_llegar_familiar" model="asw.al_llegar">
+    
+    <field name='al_llegar_nombre'>Familiar</field>
+
+</record>
+
+<record id="al_llegar_otro" model="asw.al_llegar">
+    
+    <field name='al_llegar_nombre'>Otro</field>
+
+</record>
+
+        </data>
+        </openerp> 

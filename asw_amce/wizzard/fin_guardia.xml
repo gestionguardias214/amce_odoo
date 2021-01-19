@@ -1,0 +1,78 @@
+<openerp>
+    <data>
+        <record id="view_form_fin_guardia_ui" model="ir.ui.view">
+            <field name="name">Finalizar guardia</field>
+            <field name="model">asw.fin_guardia</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+
+                    </header>
+                    <sheet>
+                        <h3>Finalizar Guardia</h3>
+                        <group col="4">
+                            <label for="fin_profesional" colspan="2"></label>
+                            <field name="fin_profesional" nolabel="1" colspan="2" required="1" domain="[('pro_estado', '!=', 'disponible')]" options="{ 'no_create': True, 'no_create_edit':True }"/>
+
+                            <field name="fin_guardia" readonly="0" nolabel="1" colspan="4" invisible="1"/>
+
+                            <label for="fin_categoria" colspan="2"></label>
+                            <field name="fin_categoria" readonly="1" nolabel="1" colspan="2"/>
+
+                            <label for="fin_fechahora_inicio" colspan="2"></label>
+                            <field name="fin_fechahora_inicio" readonly="1" nolabel="1" colspan="2"/>
+
+                            <label for="fin_fechahora" colspan="2"></label>                            
+                            <field name="fin_fechahora" required="1" nolabel="1" colspan="2"/>
+
+                            <label for="msg_error" colspan="2" style="color: red;" attrs="{ 'invisible': ['|',('msg_error','=',False),('msg_error','=', '')] }"></label>  
+                            <field name="msg_error" nolabel="1" attrs="{ 'invisible': ['|',('msg_error','=',False),('msg_error','=', '')] }" readonly='1' style="color: red;" colspan='2'/>
+
+                            <label for="fin_cantidad_horas" colspan="2"></label>
+                            <field name="fin_cantidad_horas" nolabel="1" colspan="2"/>
+
+                            <label for="fin_precio" colspan="2" invisible="1"></label>
+                            <field name="fin_precio" readonly="1" nolabel="1" colspan="2" invisible="1"/>
+
+                            <label for="fin_importe" colspan="2" invisible="1"></label>
+                            <field name="fin_importe" nolabel="1" invisible="1" colspan="2"/>
+
+                            <label for="fin_observaciones" colspan="2"></label>
+                            <field name="fin_observaciones" nolabel="1" colspan="2"/>
+                            
+                        </group>                        
+
+                        <footer>
+                            <button name="actualizar_fin"  attrs="{ 'invisible': [('msg_error','!=',False),('msg_error','!=', '')] }" type="object" class="btn btn-primary" string="Finalizar Guardia"/>
+                            <button name="cancel" string="Cancelar" special="cancel" class="btn btn-cancel"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_form_fin_guardia_ui_coordinadores" model="ir.ui.view">
+            <field name="name">Fin de Guardia - Coordinadores</field>
+            <field name="model">asw.fin_guardia</field>
+            <field name="inherit_id" eval="ref('view_form_fin_guardia_ui')"/>
+            <field name="groups_id" eval="[(6, 0, [ref('module_category_asw_amce_administrador') ])]"/>
+            <field name="arch" type="xml">
+                
+                <label for="fin_precio" colspan="2" position="attributes">
+                    <attribute name="invisible">0</attribute>
+                </label>
+                <field name="fin_precio" position="attributes">
+                    <attribute name="invisible">0</attribute>
+                </field>
+                <label for="fin_importe" colspan="2" position="attributes">
+                    <attribute name="invisible">0</attribute>
+                </label>
+                <field name="fin_importe" position="attributes">
+                    <attribute name="invisible">0</attribute>
+                </field>
+            </field> 
+        </record>
+
+        <act_window id="asw_fin_guardia_action" name="Finalizar Guardia" src_model="asw.fin_guardia" res_model="asw.fin_guardia" view_mode="form" target="new" multi="True"/>
+    </data>
+</openerp>

@@ -1,0 +1,38 @@
+<openerp>
+    <data>
+        <record model="ir.module.category" id="module_category_asw_amce">
+            <field name="name">AMCE</field>
+            <field name="description">Gestion AMCE</field>                 
+        </record>
+
+        <record model="res.groups" id="module_category_asw_amce_data_entry">
+            <field name="name">Data Entry</field>          
+            <field name="category_id" eval="ref('module_category_asw_amce')"/>              
+        </record>
+
+        <record model="res.groups" id="module_category_asw_amce_administrador">
+            <field name="name">Coordinador</field>          
+            <field name="category_id" eval="ref('module_category_asw_amce')"/>                
+        </record>
+
+        <record model="res.groups" id="module_category_asw_amce_actualizador_precios">
+            <field name="name">Actualizacion precios</field>          
+            <field name="category_id" eval="ref('module_category_asw_amce')"/>                
+        </record>
+
+        <record model="res.groups" id="module_category_asw_amce_presentismo">
+            <field name="name">Presentismo</field>          
+            <field name="category_id" eval="ref('module_category_asw_amce')"/>                
+        </record>
+
+        <record model="res.groups" id="module_category_asw_amce_guardias_fabrica">
+            <field name="name">Guardias de Fábrica</field>          
+            <field name="category_id" eval="ref('module_category_asw_amce')"/>                
+        </record>
+
+         <record model="res.groups" id="module_category_asw_amce_liquidador">
+            <field name="name">Liquidador</field>          
+            <field name="category_id" eval="ref('module_category_asw_amce')"/>                
+        </record>
+    </data>
+</openerp>

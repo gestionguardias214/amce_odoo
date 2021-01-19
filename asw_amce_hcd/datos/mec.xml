@@ -1,0 +1,32 @@
+        
+<openerp>
+    <data noupdate='1'>
+        <record id="mec_acc_vehicular" model="asw.mec">
+            <field name='mec_nombre'>Acc. vehicular</field>
+        </record>
+        <record id="mec_caida" model="asw.mec">
+            <field name='mec_nombre'>Caida</field>
+        </record>
+        <record id="mec_arma_fuego" model="asw.mec">
+            <field name='mec_nombre'>Arma fuego</field>
+        </record>
+        <record id="mec_arma_blanca" model="asw.mec">
+            <field name='mec_nombre'>Arma blanca</field>
+        </record>
+        <record id="mec_electrocucion" model="asw.mec">
+            <field name='mec_nombre'>Electrocucion</field>
+        </record>
+        <record id="mec_mordedura" model="asw.mec">
+            <field name='mec_nombre'>Mordedura</field>
+        </record>
+        <record id="mec_picadura" model="asw.mec">
+            <field name='mec_nombre'>Picadura</field>
+        </record>
+        <record id="mec_explosion" model="asw.mec">
+            <field name='mec_nombre'>Explosion</field>
+        </record>
+        <record id="mec_derrumbe" model="asw.mec">
+            <field name='mec_nombre'>Derrumbe</field>
+        </record>
+    </data>
+</openerp> 

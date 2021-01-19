@@ -1,0 +1,58 @@
+        
+<openerp>
+    <data noupdate='1'>
+        <record id="resp_normal" model="asw.ap_respiratorio">
+            <field name='resp_nombre'>Normal</field>
+        </record>
+        <record id="resp_irregular" model="asw.ap_respiratorio">
+            <field name='resp_nombre'>Irregular</field>
+        </record>
+        <record id="resp_parad" model="asw.ap_respiratorio">
+            <field name='resp_nombre'>Parad.</field>
+        </record>
+        <record id="resp_no_corresponde" model="asw.ap_respiratorio">
+            <field name='resp_nombre'>No corresponde</field>
+        </record>
+        <record id="resp_apnea" model="asw.ap_respiratorio">
+            <field name='resp_nombre'>Apnea</field>
+        </record>
+        <record id="resp_asistida" model="asw.ap_respiratorio">
+            <field name='resp_nombre'>Asistida</field>
+        </record>
+        <record id="resp_recl_m_acc" model="asw.ap_respiratorio">
+            <field name='resp_nombre'>Recl. m. acc.</field>
+        </record>
+        <record id="resp_hemoptisis" model="asw.ap_respiratorio">
+            <field name='resp_nombre'>Hemoptisis</field>
+        </record>
+        <record id="resp_broncoaspir" model="asw.ap_respiratorio">
+            <field name='resp_nombre'>Broncoaspir.</field>
+        </record>
+        <record id="resp_cuerpo_extranio" model="asw.ap_respiratorio">
+            <field name='resp_nombre'>Cuerpo extraño</field>
+        </record>
+        <record id="resp_mucopurur" model="asw.ap_respiratorio">
+            <field name='resp_nombre'>Mucopurur.</field>
+        </record>
+        <record id="resp_rales_crep" model="asw.ap_respiratorio">
+            <field name='resp_nombre'>Rales crep.</field>
+            <field name='opcion_doble'>True</field>
+        </record>
+        <record id="resp_subcrep" model="asw.ap_respiratorio">
+            <field name='resp_nombre'>Subcrep.</field>
+            <field name='opcion_doble'>True</field>
+        </record>
+        <record id="resp_m_v_ausentes" model="asw.ap_respiratorio">
+            <field name='resp_nombre'>M. v. ausentes</field>
+            <field name='opcion_doble'>True</field>
+        </record>
+        <record id="resp_sibilancias" model="asw.ap_respiratorio">
+            <field name='resp_nombre'>Sibilancias</field>
+            <field name='opcion_doble'>True</field>
+        </record>
+        <record id="resp_roncus" model="asw.ap_respiratorio">
+            <field name='resp_nombre'>Roncus</field>
+            <field name='opcion_doble'>True</field>
+        </record>
+    </data>
+</openerp> 

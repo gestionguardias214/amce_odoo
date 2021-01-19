@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="view_form_mco" model="ir.ui.view">
+            <field name="name">Motivo de Consulta</field>
+            <field name="model">asw.mco</field>
+            <field name="arch" type="xml">
+                <form string="Motivo de Consulta">
+                    <header>
+                    </header>
+                    <sheet>
+                        <group string="Datos" col="4">
+                            <field name="mco_nombre" />
+                            <field name="mco_codigo" />
+                            <field name="active" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_mco" model="ir.ui.view">
+            <field name="name">Motivo de Consulta</field>
+            <field name="model">asw.mco</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="mco_nombre" />
+                    <field name="mco_codigo" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_search_mco" model="ir.ui.view">
+            <field name="name">Motivo de Consulta</field>
+            <field name="model">asw.mco</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="mco_nombre" />
+                    <field name="mco_codigo" />
+                </search>
+            </field>
+        </record>
+        
+        <record id="action_mco_act_window" model="ir.actions.act_window">
+            <field name="type">ir.actions.act_window</field>
+            <field name="name">Motivo de Consulta</field>
+            <field name="res_model">asw.mco</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+            <field name="target">current</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="view_form_historia" model="ir.ui.view">
+            <field name="name">Historia Clinica</field>
+            <field name="model">asw.historia</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="%(asw_reporte_hcd)d" string="IMPRIMIR" class='btn-primary' type="action" icon="fa-print"/>
+
+                        
+                        <button name="obtener_datos_firebase" string="Recuperar Firmas" type="object" class="oe_highlight"/>
+                        
+                    </header>
+                    <sheet>
+                        <notebook>
+                            <page string="Historia Clinica">
+                                
+                                <div>
+                                    <h1>Historia Clinica Prehospitalaria</h1>
+                                </div>
+
+                                <group string="Datos Generales" col='4'>
+                                    <field name="historia_fecha"/>
+                                    <field name="historia_movil_id"/>
+                                    <field name="historia_medico" />
+                                    <field name="historia_chofer" />
+                                    <field name="firma" widget="image" style='width: 200px;'/>
+                                    <field name="historia_enfermero" />
+                                </group>
+
+                                <group string="Motivo de Llamado" col='4'>
+                                    <field name="historia_motivo_llamada_motivo" />
+                                    <field name="historia_motivo_llamada_color" />
+                                </group>
+
+                                <group string="Tipo de Historia">
+                                    <field name="historia_ubicacion_atencion" />
+                                </group>
+
+                                <group string="Paciente" col='4'>                                
+                                    <field name="hpa_dni" />
+                                    <field name="hpa_cobertura" />
+                                    <field name="hpa_plan" />
+                                    <field name="hpa_nro_socio" />
+                                    <field name="hpa_nombre" />
+                                    <field name="hpa_apellido" />
+                                    <field name="hpa_edad" />
+                                    <field name="hpa_localidad" />
+                                    <field name="hpa_calle" />
+                                    <field name="hpa_interseccion" />
+                                    <field name="hpa_nro" />
+                                    <field name="hpa_piso" />
+                                    <field name="hpa_dto" />                           
+                                </group>
+                                
+                                <group string="Signos Vitales">
+                                    <field name="historia_signos_vitales_ids" nolabel='1'>                                
+                                        <tree string="Caption" create="false" delete="false" edit="false">
+                                            <field name="hora" />
+                                            <field name="tas" />
+                                            <field name="tad" />
+                                            <field name="temperatura" />                                    
+                                            <field name="frres" />
+                                            <field name="fc" />
+                                            <field name="llcap" /> 
+                                            <field name="glisemia" /> 
+                                            <field name="sat_oxigeno" />
+                                        </tree>
+                                        
+                                    </field>
+                                </group>
+
+                                <group string="Antecedentes">
+                                    <field name="historia_antecedentes_id" />
+                                </group>
+
+                                <group string="Tiempo de Evolucion de los sintomas">
+                                    <field name="historia_tiempo_dia" />
+                                    <field name="historia_tiempo_hora" />
+                                    <field name="historia_tiempo_minuto" />
+                                </group>
+
+                                
+                                <group string="Score de Glasgow">
+                                    <field name="historia_score_glasgow_ids" nolabel='1'>                                
+                                        <tree string="Caption" create="false" delete="false" edit="false" >
+                                            <field name="hora" />
+                                            <field name="motora" />
+                                            <field name="ocular" />
+                                            <field name="verbal" />
+                                            <field name="total" />
+                                        </tree>                                
+                                    </field>
+                                </group>
+                                
+                                <group string="Opcionales">
+                                    <field name="historia_piel_mucosa" />                            
+                                    <field name="historia_neuro" />                            
+                                    <field name="historia_ap_respiratorio" />                            
+                                    <field name="historia_cyc" />                            
+                                    <field name="historia_cardio" />                            
+                                    <field name="historia_ecg_desc" />                            
+                                    <field name="historia_sist_oseoart_muscular" />                            
+                                    <field name="historia_abdomen" />                            
+                                    <field name="historia_urogen" />                            
+                                    <field name="historia_gco" />                            
+                                    <field name="historia_psiquiatrico" />                                                       
+                                </group>
+                                
+                                <group string="Trauma">
+                                    <field name="historia_trauma_detalle_ids" nolabel='1'>                                
+                                        <tree string="Caption" create="false" delete="false" edit="false">
+                                            <field name="lugar" />
+                                            <field name="detalle" />
+                                        </tree>                                
+                                    </field>                            
+                                </group>
+
+                                <group string="Diagnostico">
+                                    <field name="historia_diagnos" />
+                                    <field name="historia_proc" />
+                                    <field name="historia_epicrisis" />
+                                    <field name="historia_medicamentos" />
+                                </group>
+
+                                <group string="Descenlace">
+                                    <field name="historia_evol_id" />
+                                    <field name="historia_des_id" />
+                                    <field name="historia_al_llegar_id" />
+                                </group>
+
+                                <group string="Datos Derivación">
+                                    <field name="historia_hosp" />
+                                    <field name="historia_nombre_med_derivante" />
+                                    <field name="historia_mat_med_derivante" /> 
+                                    <field name="historia_firma_med_derivante" style='width: 200px;' widget="image"/>
+                                </group>
+
+                                <group string="Finalización">
+                                    <field name="historia_abona_copago" />
+                                    <field name="historia_firma_pac_acompanante" style='width: 200px;' widget="image"/>
+                                </group>
+                            </page>
+                            <page string="Información de Sincronización">                            
+                                <group>
+                                    <field name="id_firebase" />
+                                    <field name="key" />
+                                    <field name="id_interno" />
+                                    <field name="version_app" />
+                                    <field name="create_date" />
+                                </group>
+                                <div>
+                                    <p>
+                                        Información disponible desde la version 20 de la app
+                                    </p>
+                                </div>
+                                
+                                <group>
+                                    <field name="motivo_cancelacion" />
+                                    <field name="active" />                                
+                                </group>
+                                
+                                
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_historia" model="ir.ui.view">
+            <field name="name">Historia Clinica</field>
+            <field name="model">asw.historia</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="id" string="Cod Interno"/>
+                    <field name="create_date" />
+                    <field name="historia_fecha"/>
+                    <field name="historia_movil_id"/>                    
+                    <field name="hpa_nombre"/>
+                    <field name="hpa_apellido" />
+                    <field name="hpa_dni" />
+                    <field name="historia_medico" />
+                    <field name="historia_diagnos" />
+                    <field name="historia_motivo_llamada_motivo" />
+                </tree>
+            </field>
+        </record>
+
+         <record id="view_search_historia" model="ir.ui.view">
+            <field name="name">Historia Clinica</field>
+            <field name="model">asw.historia</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field string="Paciente"
+                        name="hpa_nombre"
+                        filter_domain="['|','|',('hpa_nombre','ilike', self),('hpa_apellido','ilike', self),('hpa_dni','ilike', self)]"
+                        help="Busca por Nombre, Apellido o DNI" />
+                    <field name="id" string="Cod Interno"/>
+                    <field name="historia_movil_id"/>   
+                    <field name="historia_medico" />
+                    <field name="historia_fecha"/>
+                    <field name="historia_diagnos" />
+                    <field name="historia_motivo_llamada_motivo" />
+                                        
+                    <group string="Agrupar Por">
+                        <filter name="group_by_dia" string="Dia" context="{'group_by':'historia_fecha:day'}" help=""/>
+                        <filter name="historia_medico" string="Médico" context="{'group_by':'historia_medico'}" help=""/>
+                        <filter name="historia_movil_id" string="Movil" context="{'group_by':'historia_movil_id'}" help=""/>
+                    </group>
+                    
+                    
+                </search>
+            </field>
+        </record>
+
+
+
+        <record id="action_historia_act_window" model="ir.actions.act_window">
+            <field name="type">ir.actions.act_window</field>
+            <field name="name">Historia Clinica</field>
+            <field name="res_model">asw.historia</field>
+            <field name="view_mode">tree,form,kanban,pivot</field>
+            <field name="view_type">form</field>
+            <field name="target">current</field>
+        </record>
+    </data>
+</odoo>

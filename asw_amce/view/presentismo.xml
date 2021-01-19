@@ -1,0 +1,72 @@
+<openerp>
+    <data>
+        <record model="ir.actions.act_window" id="asw_presentismo_list_action">
+            <field name="name">Presentismo</field>
+            <field name="res_model">asw.presentismo</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Cree el primer Presentismo</p>
+            </field>
+        </record>
+
+        <record id="view_tree_presentismo_ui" model="ir.ui.view">
+            <field name="name">Presentismo</field>
+            <field name="model">asw.presentismo</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="id" string="Nro"/>
+                    <field name="pre_periodo" />
+                    <field name="pre_grupo"/>
+                    <field name="pre_estado" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_form_presentismo_ui" model="ir.ui.view">
+            <field name="name">Presentismo</field>
+            <field name="model">asw.presentismo</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="validar" class="oe_highlight" type="object" string="Procesar" attrs="{ 'invisible' : [('pre_estado', '=', 'validado')] }"></button>
+                        <button name="cancelar" type="object" string="Cancelar" attrs="{ 'invisible' : [('pre_estado', '!=', 'validado')] }" confirm="Esta seguro de cancelar el proceso de PRESENTISMO?, si lo hace eliminará los registro generados"></button>
+                        <field name="pre_estado" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="pre_periodo" required="1" attrs="{ 'readonly' : [('pre_estado', '=', 'validado')] }" domain="[('per_cerrado', '=', False)]"/>
+                            <field name="pre_grupo" widget="many2many_checkboxes" required="1" attrs="{ 'readonly' : [('pre_estado', '=', 'validado')] }"/>
+                        </group>
+                        <button name="agregar" class="oe_highlight" type="object" string="Cargar Profesionales" attrs="{ 'invisible' : [('pre_estado', '=', 'validado')] }"></button>
+
+
+                        <group string="Profesionales">
+                            <field name="pre_linea_presentismo" nolabel="1" attrs="{ 'readonly' : [('pre_estado', '=', 'validado')] }">
+                                <tree string="Profesionales" create="1" delete="1" edit="1" editable="bot">
+                                    <field name="lpr_profesional" />
+                                </tree>
+                            </field>
+                        </group>
+                        
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"></field>
+                            <field name="message_ids" widget="mail_thread"></field>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_search_presentismo" model="ir.ui.view">
+            <field name="name">Presentismo</field>
+            <field name="model">asw.presentismo</field>
+            <field name="arch" type="xml">
+            <search>
+                <field name="id" string="Nro"/>
+                <field name="pre_periodo" />
+            </search>
+            </field>
+        </record>
+    </data>
+</openerp>

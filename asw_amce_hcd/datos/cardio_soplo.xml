@@ -1,0 +1,22 @@
+<odoo>
+    <data noupdate='0'>
+        <record id="cardio_soplo_sistolico" model="asw.cardio_soplo">
+            <field name='nombre'>SISTOLICO</field>
+        </record>
+        <record id="cardio_soplo_distolico" model="asw.cardio_soplo">
+            <field name='nombre'>DISTOLICO</field>
+        </record>
+        <record id="cardio_soplo_mit" model="asw.cardio_soplo">
+            <field name='nombre'>MIT</field>
+        </record>
+        <record id="cardio_soplo_aor" model="asw.cardio_soplo">
+            <field name='nombre'>AOR</field>
+        </record>
+        <record id="cardio_soplo_tri" model="asw.cardio_soplo">
+            <field name='nombre'>TRI</field>
+        </record>
+        <record id="cardio_soplo_pul" model="asw.cardio_soplo">
+            <field name='nombre'>PUL</field>
+        </record>
+    </data>
+</odoo>

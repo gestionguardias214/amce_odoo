@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="view_form_hosp" model="ir.ui.view">
+            <field name="name">Hospitales</field>
+            <field name="model">asw.hosp</field>
+            <field name="arch" type="xml">
+                <form string="Hospitales">
+                    <sheet>
+                        <group string="Descripcion" col='4'>
+                            <field name="hosp_nombre" />
+                            <field name="active" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_hosp" model="ir.ui.view">
+            <field name="name">Hospitales</field>
+            <field name="model">asw.hosp</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="hosp_nombre" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_search_hosp" model="ir.ui.view">
+            <field name="name">Hospitales</field>
+            <field name="model">asw.hosp</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="hosp_nombre" />
+                </search>
+            </field>
+        </record>
+
+        <record id="action_hosp_act_window" model="ir.actions.act_window">
+            <field name="type">ir.actions.act_window</field>
+            <field name="name">Hospitales</field>
+            <field name="res_model">asw.hosp</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+            <field name="target">current</field>
+        </record>
+    </data>
+</odoo>

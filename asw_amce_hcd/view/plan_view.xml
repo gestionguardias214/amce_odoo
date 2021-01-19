@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="view_form_plan" model="ir.ui.view">
+            <field name="name">Plan</field>
+            <field name="model">asw.plan</field>
+            <field name="arch" type="xml">
+                <form string="Plan">
+                    <header>
+                    </header>
+                    <sheet>
+                        <group string="Datos" col="4">
+                            <field name="plan_nombre" />
+                            <field name="plan_codigo" />
+                            <field name="active" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_plan" model="ir.ui.view">
+            <field name="name">Plan</field>
+            <field name="model">asw.plan</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="plan_nombre" />
+                    <field name="plan_codigo" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_search_plan" model="ir.ui.view">
+            <field name="name">Plan</field>
+            <field name="model">asw.plan</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="plan_nombre" />
+                    <field name="plan_codigo" />
+                </search>
+            </field>
+        </record>
+        
+        <record id="action_plan_act_window" model="ir.actions.act_window">
+            <field name="type">ir.actions.act_window</field>
+            <field name="name">Plan</field>
+            <field name="res_model">asw.plan</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+            <field name="target">current</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,61 @@
+        
+<odoo>
+    <data noupdate='1'>
+        <record id="neuro_normal" model="asw.neuro">
+            <field name='neuro_nombre'>normal</field>
+            <field name='active'>True</field>
+        </record>
+        <record id="neuro_miosis" model="asw.neuro">
+            <field name='neuro_nombre'>miosis</field>
+            <field name='opcion_doble'>True</field>
+            <field name='active'>True</field>
+        </record>
+        <record id="neuro_midrias" model="asw.neuro">
+            <field name='neuro_nombre'>midrias</field>
+            <field name='opcion_doble'>True</field>
+            <field name='active'>True</field>
+        </record>
+        <record id="neuro_no_react" model="asw.neuro">
+            <field name='neuro_nombre'>no react.</field>
+            <field name='opcion_doble'>True</field>
+            <field name='active'>True</field>
+        </record>
+        <record id="neuro_babinsky" model="asw.neuro">
+            <field name='neuro_nombre'>babisky</field>
+            <field name='opcion_doble'>True</field>
+            <field name='active'>True</field>
+        </record>
+        <record id="neuro_afas" model="asw.neuro">
+            <field name='neuro_nombre'>AFAS.</field>
+            <field name='active'>True</field>
+        </record>
+        <record id="neuro_aprxia" model="asw.neuro">
+            <field name='neuro_nombre'>APRXIA.</field>
+            <field name='active'>True</field>
+        </record>
+        <record id="neuro_otorragia" model="asw.neuro">
+            <field name='neuro_nombre'>OTORRAGIA</field>
+            <field name='active'>True</field>
+        </record>
+        <record id="neuro_convul" model="asw.neuro">
+            <field name='neuro_nombre'>CONVUL.</field>
+            <field name='active'>True</field>
+        </record>
+        <record id="neuro_rig_nuc" model="asw.neuro">
+            <field name='neuro_nombre'>RIG. NUC.</field>
+            <field name='active'>True</field>
+        </record>
+        <record id="neuro_inc_esfinter" model="asw.neuro">
+            <field name='neuro_nombre'>INC. ESFINTER</field>
+            <field name='active'>True</field>
+        </record>
+        <record id="neuro_gral" model="asw.neuro">
+            <field name='neuro_nombre'>CONVULSIONES GENERALES</field>
+            <field name='active'>True</field>
+        </record>
+        <record id="neuro_fog" model="asw.neuro">
+            <field name='neuro_nombre'>CONVULSIONES FOCALES</field>
+            <field name='active'>True</field>
+        </record>
+    </data>
+</odoo> 

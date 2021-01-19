@@ -1,0 +1,19 @@
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="asw_res_company_asw_amce">
+            <field name="name">asw.amce.res.company.form.view</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form" />
+            <field name="arch" type="xml">
+               <notebook position="inside">
+                   <page string="Acciones">                       
+                       <button name="recalcular_fabricas_guardias" 
+                        string="Actualizar Fabricas" 
+                        type="object" 
+                        class="oe_highlight"/>                       
+                   </page>
+               </notebook>
+            </field>
+        </record>
+    </data>
+</openerp>

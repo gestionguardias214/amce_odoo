@@ -1,0 +1,78 @@
+
+        <openerp>
+        <data noupdate='1'>
+        
+<record id="des_domicilio" model="asw.des">
+    
+    <field name='des_nombre'>Domicilio</field>
+
+</record>
+
+<record id="des_guarda_med" model="asw.des">
+    
+    <field name='des_nombre'>Guarda med.</field>
+
+</record>
+
+<record id="des_uti" model="asw.des">
+    
+    <field name='des_nombre'>UTI</field>
+
+</record>
+
+<record id="des_fallec_nosoc" model="asw.des">
+    
+    <field name='des_nombre'>Fallec. nosoc.</field>
+
+</record>
+
+<record id="des_rech_tras_inter" model="asw.des">
+    
+    <field name='des_nombre'>Rech. tras./inter.</field>
+
+</record>
+
+<record id="des_queda_sala_guard" model="asw.des">
+    
+    <field name='des_nombre'>Queda sala guard.</field>
+
+</record>
+
+<record id="des_inter_sala_gral" model="asw.des">
+    
+    <field name='des_nombre'>Inter. sala gral.</field>
+
+</record>
+
+<record id="des_fallec_domic" model="asw.des">
+    
+    <field name='des_nombre'>Fallec. domic.</field>
+
+</record>
+
+<record id="des_ya_retirado" model="asw.des">
+    
+    <field name='des_nombre'>Ya retirado por otros medicos</field>
+
+</record>
+
+<record id="des_fallec_en_traslado" model="asw.des">
+    
+    <field name='des_nombre'>Fallec. en tralado</field>
+
+</record>
+
+<record id="des_fallec_antes_llegada" model="asw.des">
+    
+    <field name='des_nombre'>Fallec. antes llegada equipo emerg.</field>
+
+</record>
+
+<record id="des_falso_llamado" model="asw.des">
+    
+    <field name='des_nombre'>Falso llamado</field>
+
+</record>
+
+        </data>
+        </openerp> 

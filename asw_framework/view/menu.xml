@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">            
+        <!-- Elemento Root -->
+        <menuitem name="Maestros" id="asw_root"/>        
+
+        <!-- Elemento Grupe -->
+        <menuitem name="ABMs" id="asw_grupo_abm" parent="asw_root"/>
+    </data>
+</odoo>

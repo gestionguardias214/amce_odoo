@@ -1,0 +1,179 @@
+<openerp>
+    <data>
+        <record model="ir.actions.act_window" id="asw_guardia_list_action">
+            <field name="name">Guardia</field>
+            <field name="res_model">asw.guardia</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_ids" eval="[(5, 0, 0),(0, 0, {'view_mode': 'tree', 'view_id': ref('view_tree_guardia_ui')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('view_form_guardia_ui')})]"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Cree el primer Guardia</p>
+            </field>
+        </record>
+
+        <record id="view_tree_guardia_ui" model="ir.ui.view">
+            <field name="name">Guardia</field>
+            <field name="model">asw.guardia</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="id" string="Nro"/>
+                    <field name="gua_profesional" />
+                    <field name="gua_categoria" />
+                    <field name="gua_ingreso" />
+                    <field name="gua_egreso" />
+                    <field name="gua_canthoras" sum="1"/>
+                    <field name="gua_importe" sum="1"/>
+                    <field name="gua_observaciones" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_tree_guardia_fabrica_ui" model="ir.ui.view">
+            <field name="name">Guardia</field>
+            <field name="model">asw.guardia</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="id" string="Nro"/>
+                    <field name="gua_profesional" />
+                    <field name="gua_categoria" />
+                    <field name="gua_ingreso" />
+                    <field name="gua_egreso" />
+                    <field name="gua_canthoras" sum="1"/>
+                    <field name="gua_importe" sum="1"/>
+                    <field name="gua_importe_conceptos" sum="1"/>
+                    <field name="gua_importe_total" sum="1"/>
+                    <field name="gua_observaciones" />
+                    <field name="gua_fabrica" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="asw_guardia_fabrica_list_action">
+            <field name="name">Guardia Fabrica</field>
+            <field name="res_model">asw.guardia</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,pivot</field>
+            <field name="view_ids" eval="[(5, 0, 0),(0, 0, {'view_mode': 'tree', 'view_id': ref('view_tree_guardia_fabrica_ui')})]"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Cree el primer Guardia</p>
+            </field>
+        </record>
+
+        <record id="view_pivot_guardia_ui" model="ir.ui.view">
+            <field name="name">Guardia</field>
+            <field name="model">asw.guardia</field>
+            <field name="type">pivot</field>
+            <field name="mode">primary</field>
+            <field name="priority" eval="16" />
+            <field name="active" eval="True" />
+            <field name="arch" type="xml">     
+               <graph string="Guardia">
+                   <field name='gua_periodo'/>
+                   <field name="gua_fabrica" />
+                   <field name="gua_importe" type="measure"/>
+                   <field name="gua_importe_conceptos" type="measure"/>
+                   <field name="gua_importe_total" type="measure"/>
+                <field name="gua_canthoras" type="measure"/>
+               </graph>
+            </field>
+        </record>  
+
+        <record id="view_form_guardia_ui" model="ir.ui.view">
+            <field name="name">Guardia</field>
+            <field name="model">asw.guardia</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        
+                        <button name="actualizar_precio" string="Actualizar precio" type="object" />
+                        
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <field name="gua_editable" invisible="1"/>
+                        <notebook>
+                            <page string="Datos de la guardia" >
+                                <group col="4" string="Datos generales" >
+                                    <field name="gua_profesional" required="1" attrs="{ 'readonly': [('state','in',('liquidada'))]  }" />
+                                    <field name="gua_categoria" required="1" attrs="{ 'readonly': [('gua_editable','=',False)]  }" />
+                                    <field name="create_uid" readonly="1"/>
+                                    <field name="gua_usu_fin" readonly="1"/>
+                                </group>
+
+                                <group string="Datos de cálculos" col="4">
+
+                                    <label for='gua_ingreso' colspan="2" style="text-align: right;">Label</label>
+                                    <field name="gua_ingreso" required="1" colspan="2" nolabel="1" attrs="{ 'readonly': [('gua_editable','=',False)]  }" />
+
+                                    <label for="gua_egreso" colspan="2"></label>
+                                    <field name="gua_egreso" required="0" colspan="2" nolabel="1" attrs="{ 'readonly': [('gua_editable','=',False)]  }" />                                    
+
+                                    <label for="gua_precioxhora" colspan="2"></label>
+                                    <field name="gua_precioxhora" required="1" colspan="2" nolabel="1" readonly="1" />
+
+                                    <label for="gua_canthoras" colspan="2"></label>
+                                    <field name="gua_canthoras" required="1" colspan="2" nolabel="1" attrs="{ 'readonly': [('gua_editable','=',False)]  }" />
+
+                                    <label for="gua_importe" colspan="2"></label>
+                                    <field name="gua_importe" required="1" colspan="2" nolabel="1" attrs="{ 'readonly': [('gua_editable','=',False)]  }" />
+                                </group>
+
+                                <group string="Datos sobre la Liquidación">
+                                    <field name="gua_periodo" required="0" attrs="{ 'readonly': [('state','in',('liquidada'))]  }" />
+                                    <field name="gua_liquidacion" readonly='1'/>
+                                </group>
+
+                                <group string="Observaciones">
+                                    <field name="gua_observaciones" nolabel="1" attrs="{ 'readonly': [('state','in',('liquidada'))]  }" />
+                                </group>
+                            </page>
+
+                            <page string="Conceptos">
+                                <group>
+                                    <field name="gua_profesional_concepto" attrs="{ 'readonly': [('state','in',('liquidada'))]  }" />
+                                </group>
+                            </page>
+                            <page string="Fabrica">                            
+                                <group>
+                                    <field name="gua_fabrica"/>
+                                    <field name="gua_tuf" />
+
+                                    <field name="gua_refuerzo" attrs="{ 'readonly': [('gua_editable','=',False)]  }"/>
+                                    <p colspan='2'>
+                                        Este campo es para especificar si las horas de la guardias pertenecen a Refuerzos
+                                    </p>
+                                </group>
+                            </page>
+                        </notebook>
+
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"></field>
+                            <field name="message_ids" widget="mail_thread"></field>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_search_guardia" model="ir.ui.view">
+            <field name="name">Guardia</field>
+            <field name="model">asw.guardia</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="id" string="Nro" />
+                    <field name="state" string="Estado" filter_domain="[('state', 'ilike', self)]"/>
+                    <field name="name" string="Guardia" filter_domain="[('name', 'ilike', self)]"/>
+                    <field name="gua_categoria" />
+                    <field name="gua_profesional" string="Profesional" filter_domain="[('gua_profesional', 'ilike', self)]"/>
+                    <field name="gua_periodo" string="Periodo" filter_domain="[('gua_periodo', 'ilike', self)]"/>
+                    <field name="gua_liquidacion" string="Liquidación" filter_domain="[('gua_liquidacion', 'ilike', self)]"/>
+                    <field name="gua_tuf" string="Turno fabrica" filter_domain="[('gua_tuf', '=', self)]"/>
+                    <field name="gua_grupo" string="Grupo" filter_domain="[('gua_grupo', 'ilike', self)]"/>
+                    <field name="gua_ingreso" string="Fecha de Ingreso" filter_domain="[('gua_ingreso', 'ilike', self)]"/>
+                    <field name="gua_fabrica" string="Fabrica" filter_domain="[('gua_fabrica', 'ilike', self)]"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</openerp>

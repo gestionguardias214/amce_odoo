@@ -1,0 +1,25 @@
+<odoo>
+    <data>
+        <record id="estado_mental_normal" model="asw.neuro_estado_mental">
+            <field name='nombre'>NORMAL</field>
+        </record>
+        <record id="estado_mental_lucido" model="asw.neuro_estado_mental">
+            <field name='nombre'>LUCIDO</field>
+        </record>
+        <record id="estado_mental_desor" model="asw.neuro_estado_mental">
+            <field name='nombre'>DESOR.</field>
+        </record>
+        <record id="estado_mental_vigil" model="asw.neuro_estado_mental">
+            <field name='nombre'>VIGIL</field>
+        </record>
+        <record id="estado_mental_estup" model="asw.neuro_estado_mental">
+            <field name='nombre'>ESTUP.</field>
+        </record>
+        <record id="estado_mental_exicit" model="asw.neuro_estado_mental">
+            <field name='nombre'>EXICIT.</field>
+        </record>
+        <record id="estado_mental_deprim" model="asw.neuro_estado_mental">
+            <field name='nombre'>DEPRIM.</field>
+        </record>
+    </data>
+</odoo>

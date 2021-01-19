@@ -1,0 +1,126 @@
+
+        <openerp>
+        <data noupdate='1'>
+        
+<record id="abdomen_no_corresponde" model="asw.abdomen">
+    
+    <field name='abdomen_nombre'>No corresponde</field>
+
+</record>
+
+<record id="abdomen_normal" model="asw.abdomen">
+    
+    <field name='abdomen_nombre'>Normal</field>
+
+</record>
+
+<record id="abdomen_hernia" model="asw.abdomen">
+    
+    <field name='abdomen_nombre'>Hernia</field>
+
+</record>
+
+<record id="abdomen_complic" model="asw.abdomen">
+    
+    <field name='abdomen_nombre'>Complic.</field>
+
+</record>
+
+<record id="abdomen_evicerac" model="asw.abdomen">
+    
+    <field name='abdomen_nombre'>Evicerac.</field>
+
+</record>
+
+<record id="abdomen_eventrac" model="asw.abdomen">
+    
+    <field name='abdomen_nombre'>Eventrac.</field>
+
+</record>
+
+<record id="abdomen_hematemesis" model="asw.abdomen">
+    
+    <field name='abdomen_nombre'>Hematemesis</field>
+
+</record>
+
+<record id="abdomen_melena" model="asw.abdomen">
+    
+    <field name='abdomen_nombre'>Melena</field>
+
+</record>
+
+<record id="abdomen_enterorragia" model="asw.abdomen">
+    
+    <field name='abdomen_nombre'>Enterorragia</field>
+
+</record>
+
+<record id="abdomen_distendido" model="asw.abdomen">
+    
+    <field name='abdomen_nombre'>Distendido</field>
+
+</record>
+
+<record id="abdomen_ascitis" model="asw.abdomen">
+    
+    <field name='abdomen_nombre'>Ascitis</field>
+
+</record>
+
+<record id="abdomen_dolor_pal" model="asw.abdomen">
+    
+    <field name='abdomen_nombre'>Dolor pal.</field>
+
+</record>
+
+<record id="abdomen_defensa" model="asw.abdomen">
+    
+    <field name='abdomen_nombre'>Defensa</field>
+
+</record>
+
+<record id="abdomen_mac_burney" model="asw.abdomen">
+    
+    <field name='abdomen_nombre'>Mac. burney</field>
+
+</record>
+
+<record id="abdomen_murphy" model="asw.abdomen">
+    
+    <field name='abdomen_nombre'>Murphy</field>
+
+</record>
+
+<record id="abdomen_rha_pos" model="asw.abdomen">
+    
+    <field name='abdomen_nombre'>RHA +</field>
+
+</record>
+
+<record id="abdomen_rha_neg" model="asw.abdomen">
+    
+    <field name='abdomen_nombre'>RHA -</field>
+
+</record>
+
+<record id="abdomen_soplo" model="asw.abdomen">
+    
+    <field name='abdomen_nombre'>Soplo</field>
+
+</record>
+
+<record id="abdomen_hepatomeg" model="asw.abdomen">
+    
+    <field name='abdomen_nombre'>Hepatomeg.</field>
+
+</record>
+
+<record id="abdomen_esplenomeg" model="asw.abdomen">
+    
+    <field name='abdomen_nombre'>Esplenomeg.</field>
+
+</record>
+
+        </data>
+        </openerp> 

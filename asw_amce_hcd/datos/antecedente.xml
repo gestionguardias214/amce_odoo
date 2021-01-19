@@ -1,0 +1,54 @@
+
+        <openerp>
+        <data noupdate='1'>
+        
+<record id="antecedente_diabetes" model="asw.antecedente">
+    
+    <field name='antecedente_nombre'>Diabetes</field>
+
+</record>
+
+<record id="antecedente_asma" model="asw.antecedente">
+    
+    <field name='antecedente_nombre'>Asma</field>
+
+</record>
+
+<record id="antecedente_cardiop" model="asw.antecedente">
+    
+    <field name='antecedente_nombre'>Cardiop.</field>
+
+</record>
+
+<record id="antecedente_ninguna" model="asw.antecedente">
+    
+    <field name='antecedente_nombre'>Ninguna</field>
+
+</record>
+
+<record id="antecedente_convuls" model="asw.antecedente">
+    
+    <field name='antecedente_nombre'>Convuls.</field>
+
+</record>
+
+<record id="antecedente_hta" model="asw.antecedente">
+    
+    <field name='antecedente_nombre'>HTA</field>
+
+</record>
+
+<record id="antecedente_acv" model="asw.antecedente">
+    
+    <field name='antecedente_nombre'>ACV</field>
+
+</record>
+
+<record id="antecedente_alergia" model="asw.antecedente">
+    
+    <field name='antecedente_nombre'>Alergia</field>
+
+</record>
+
+        </data>
+        </openerp> 

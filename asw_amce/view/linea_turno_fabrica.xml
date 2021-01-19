@@ -1,0 +1,64 @@
+<openerp>
+    <data>
+        <record model="ir.actions.act_window" id="asw_linea_turno_fabrica_list_action">
+            <field name="name">Linea turno fabrica</field>
+            <field name="res_model">asw.linea_turno_fabrica</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Cree el primer Linea turno fabrica</p>
+            </field>
+        </record>
+
+        <record id="view_tree_linea_turno_fabrica_ui" model="ir.ui.view">
+            <field name="name">Linea turno fabrica</field>
+            <field name="model">asw.linea_turno_fabrica</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ltf_fecha" />
+                    <field name="ltf_turno" />
+                    <field name="ltf_profesional" />
+                    <field name="ltf_categoria" />
+                    <field name="ltf_canthoras" />
+                    <field name="ltf_precio" />
+                    <field name="ltf_importe" />
+                    <field name="ltf_viatico" />
+                    <field name="ltf_vianda" />
+                    <field name="ltf_total" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_form_linea_turno_fabrica_ui" model="ir.ui.view">
+            <field name="name">Linea turno fabrica</field>
+            <field name="model">asw.linea_turno_fabrica</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="ltf_fecha_inicio" />
+                            <field name="ltf_fecha_fin" />
+                            <field name="ltf_turno" />
+                            <field name="ltf_profesional" />
+                            <field name="ltf_categoria" />
+                            <field name="ltf_canthoras" />
+                            <field name="ltf_precio" />
+                            <field name="ltf_importe" />
+                            <field name="ltf_viatico" />
+                            <field name="ltf_vianda" />
+                            <field name="ltf_total" />
+                        </group>
+
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"></field>
+                            <field name="message_ids" widget="mail_thread"></field>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>

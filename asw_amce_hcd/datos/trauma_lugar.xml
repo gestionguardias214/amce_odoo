@@ -1,0 +1,84 @@
+
+        <openerp>
+        <data noupdate='1'>
+        
+<record id="trauma_lugar_cara" model="asw.trauma_lugar">
+    
+    <field name='trauma_lugar_nombre'>Cara</field>
+
+</record>
+
+<record id="trauma_lugar_craneo" model="asw.trauma_lugar">
+    
+    <field name='trauma_lugar_nombre'>Craneo</field>
+
+</record>
+
+<record id="trauma_lugar_cuello" model="asw.trauma_lugar">
+    
+    <field name='trauma_lugar_nombre'>Cuello</field>
+
+</record>
+
+<record id="trauma_lugar_torax" model="asw.trauma_lugar">
+    
+    <field name='trauma_lugar_nombre'>Torax</field>
+
+</record>
+
+<record id="trauma_lugar_abdom" model="asw.trauma_lugar">
+    
+    <field name='trauma_lugar_nombre'>Abdom.</field>
+
+</record>
+
+<record id="trauma_lugar_genit" model="asw.trauma_lugar">
+    
+    <field name='trauma_lugar_nombre'>Genit.</field>
+
+</record>
+
+<record id="trauma_lugar_perine" model="asw.trauma_lugar">
+    
+    <field name='trauma_lugar_nombre'>Perine.</field>
+
+</record>
+
+<record id="trauma_lugar_pelvis" model="asw.trauma_lugar">
+    
+    <field name='trauma_lugar_nombre'>Pelvis</field>
+
+</record>
+
+<record id="trauma_lugar_raquis" model="asw.trauma_lugar">
+    
+    <field name='trauma_lugar_nombre'>Raquis</field>
+
+</record>
+
+<record id="trauma_lugar_miemb_inf_izq" model="asw.trauma_lugar">
+    
+    <field name='trauma_lugar_nombre'>Miemb. inf. izq.</field>
+
+</record>
+
+<record id="trauma_lugar_miemb_inf_der" model="asw.trauma_lugar">
+    
+    <field name='trauma_lugar_nombre'>Miemb. inf. der.</field>
+
+</record>
+
+<record id="trauma_lugar_miemb_sup_izq" model="asw.trauma_lugar">
+    
+    <field name='trauma_lugar_nombre'>Miemb. sup. izq.</field>
+
+</record>
+
+<record id="trauma_lugar_miemb_sup_der" model="asw.trauma_lugar">
+    
+    <field name='trauma_lugar_nombre'>Miemb. sup. der.</field>
+
+</record>
+
+        </data>
+        </openerp> 

@@ -1,0 +1,58 @@
+<openerp>
+    <data>
+        <record model="ir.actions.act_window" id="asw_correcciones_admin_list_action">
+            <field name="name">Correcciones Admin</field>
+            <field name="res_model">asw.correcciones.admin</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Cree el primer Correcciones Admin</p>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="asw_correcciones_admin_partner_list_action">
+            <field name="name">Partner</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Cree el primer Correcciones Admin</p>
+            </field>
+        </record>
+
+        <record id="view_tree_correcciones_admin_ui" model="ir.ui.view">
+            <field name="name">Correcciones Admin</field>
+            <field name="model">asw.correcciones.admin</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="id" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_form_correcciones_admin_ui" model="ir.ui.view">
+            <field name="name">Correcciones Admin</field>
+            <field name="model">asw.correcciones.admin</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="periodo_id" />
+                        </group>                        
+                        
+                        <button name="recuardar_profesionales" string="Re guardar Profesionales" type="object"/>
+                        <button name="asignar_grupo" string="Asignar grupo a Profesionales" type="object"/>
+                        <button name="asignar_periodo" string="Asignar Periodo" type="object"/>        
+
+                        
+                        <button name="actualizar_precio_guardias_fabrica" string="Corregir guardias TF" type="object" />
+                                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>

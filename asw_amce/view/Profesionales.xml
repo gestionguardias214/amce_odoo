@@ -1,0 +1,150 @@
+<openerp>
+    <data>
+        <record model="ir.actions.act_window" id="asw_profesionales_list_action">
+            <field name="type">ir.actions.act_window</field>
+            <field name="name">Profesionales</field>
+            <field name="res_model">asw.profesionales</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Haga click para crear un nuevo profesional</p>
+            </field>
+        </record>
+        <!-- 
+        <record model="ir.actions.act_window" id="asw_profesionales_categorias_list_action">
+            <field name="type">ir.actions.act_window</field>
+            <field name="name">Profesionales</field>
+            <field name="res_model">asw.profesional.categoria</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Haga click para crear un nuevo profesional</p>
+            </field>
+        </record> -->
+
+        <record id="view_tree_profesionales_ui" model="ir.ui.view">
+            <field name="name">asw.profesionales.tree</field>
+            <field name="model">asw.profesionales</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="pro_codigo" />
+                    <field name="name" />
+                    <field name="phone" />
+                    <field name="pro_matricula" />
+                    <field name="email" />
+                    <field name="pro_cbu" />
+                    <field name="pro_grupo" />
+                    <field name="pro_vto_licencia" />
+                    <field name="pro_vto_examenes" />
+                    <field name="pro_vto_poliza" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_form_profesionales_ui" model="ir.ui.view">
+            <field name="name">view.asw.profesionales.form</field>
+            <field name="model">asw.profesionales</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button type="action" class="oe_stat_button" id="profesional_concepto" string="Ver Conceptos" name="%(asw_profesional_concepto_list_action)d" context="{'search_default_prc_profesional': active_id, 'default_prc_profesional': active_id}"/>
+                        <button type="action" class="oe_stat_button" id="guardia" string="Ver Guardias" name="%(asw_guardia_list_action)d" context="{'search_default_gua_profesional': active_id, 'default_gua_profesional': active_id}"/>
+                        <button type="action" class="oe_stat_button" id="liquidacion" string="Ver Liquidaciones" name="%(asw_liquidacion_list_action)d" context="{'search_default_liq_profesional': active_id, 'default_liq_profesional': active_id}"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only" />
+                            <h1>
+                                <field name="name" class="oe_inline" required="1" placeholder="Nombre del profesional"/>
+                            </h1>
+                        </div>
+
+                        <group string="Datos Personales" col="4">
+                            <field name="pro_codigo" />
+                            <field name="phone" />
+                            <field name="pro_matricula" />
+                            <field name="email" />
+                            <field name="pro_cbu" />
+                            <!-- <field name="partner_id" /> -->
+                            <field name="active" />
+                        </group>
+
+                        
+                        <notebook>
+                            <page string="Categorias">                            
+                                <group >
+                                    <field name="pro_grupo" required="1"/>
+                                    <field name="pro_categoria" nolabel="1" colspan="2" required="1" domain="[('cat_grupo', '=', pro_grupo)]">
+
+                                        <tree string="" create="1" delete="1" edit="1" editable="bot">
+                                            <field name="cat_codigo" />
+                                            <field name="cat_nombre" />
+                                            <field name="cat_presentismo" />
+                                        </tree>
+
+                                    </field>
+                                </group>
+                            </page>
+                            <page string="Fechas">
+                                <group string="Fechas de Vencimiento" col="4">
+                                    
+                                    <label for='pro_vto_licencia' colspan="2"></label>                                    
+                                    <field name="pro_vto_licencia" nolabel="1" colspan="2" string="Licencia de conducir"/>
+
+                                    <label for='pro_vto_examenes' colspan="2"></label>
+                                    <field name="pro_vto_examenes" nolabel="1" colspan="2" string="Exámenes periódicos"/>
+
+                                    <label for='pro_vto_poliza' colspan="2"></label>
+                                    <field name="pro_vto_poliza"   nolabel="1" colspan="2" string="Poliza de Mala Praxis"/>
+                                </group>
+                                <group string="Otra información" col="4">
+                                    <label for='pro_fecha_alta' colspan="2"></label>
+                                    <field name="pro_fecha_alta" nolabel="1" colspan="2"/>
+
+                                    <label for='pro_fecha_ultimo_sac' colspan="2"></label>
+                                    <field name="pro_fecha_ultimo_sac" nolabel="1" colspan="2"/>
+
+                                    <label for='pro_fecha_baja' colspan="2"></label>
+                                    <field name="pro_fecha_baja" nolabel="1" colspan="2"/>
+                                </group>                            
+                            </page>
+                        </notebook>
+                        
+
+
+
+
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"></field>
+                            <field name="message_ids" widget="mail_thread"></field>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_search_profesionales" model="ir.ui.view">
+            <field name="name">asw.profesionales.search</field>
+            <field name="model">asw.profesionales</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name" string="Nombre"/>
+                    <field name="pro_codigo" string="Código" filter_domain="[('pro_codigo', 'ilike', self)]"/>
+                    <field name="email" string="E-mail"/>
+                    <field name="pro_grupo" />
+                    <filter string="Vto licencia de conducir prox 15 dias" name="filter_lic" domain="[('prox_venc_lic', '=', True)]" />
+                    <filter string="Vto examenes prox 15 dias" name="filter_exa" domain="[('prox_venc_exa', '=', True)]" />
+                    <filter string="Vto poliza prox 15 dias" name="filter_pol" domain="[('prox_venc_pol', '=', True)]" />
+
+                    <filter string="Profesionales sin Categorias" name="filter_cat" domain="[('pro_categoria', '=', False)]" />
+                    <filter string="Profesionales sin Grupo" name="filter_cat" domain="[('pro_grupo', '=', False)]" />
+
+                    <filter string="Vtos proximos" name="filter_vto" domain="['|', '|', ('prox_venc_lic', '=', True), ('prox_venc_exa', '=', True), ('prox_venc_pol', '=', True)]"/>
+                    <field name="pro_categoria" string="Categoria" filter_domain="[('pro_categoria', 'ilike', self)]"/>
+
+
+                </search>
+            </field>
+        </record>
+    </data>
+</openerp>
