@@ -29,6 +29,8 @@
             <field name="arch" type="xml">
                 <form>
                     <header>
+                        <button type="action" class="oe_stat_button" string="Relacionar profesionales" name="%(relacionar_categoria_profesionales_action)d"/>
+                        
                         <button type="action" class="oe_stat_button" id="guardia_button" string="Ver Precios" name="%(asw_precio_categoria_list_action)d" context="{'search_default_pca_categoria': active_id, 'default_pca_categoria': active_id}"/>
                         <button type="action" class="oe_stat_button" id="profesionales_button" string="Ver Profesionales" name="%(asw_profesionales_list_action)d" context="{'search_default_pro_categoria': active_id, 'default_pro_categoria': active_id}"/>
                     </header>

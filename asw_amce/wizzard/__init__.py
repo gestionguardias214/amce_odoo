@@ -5,3 +5,5 @@ from . import configuracion
 from . import deshabilitacion
 from . import liquidacion_envio_masivo
 from . import liquidaciones_report
+from . import deshabilita_categoria
+from . import relacionar_categorias

@@ -77,7 +77,7 @@ class asw_categoria(models.Model):
     cat_fabrica = fields.Many2one(
         string=u"Fabrica",
         comodel_name="asw.fabrica"
-    )    
+    )   
     
     @api.depends('cat_codigo', 'cat_nombre')
     def _compute_name(self):
@@ -130,3 +130,4 @@ class asw_categoria(models.Model):
         result = super(asw_categoria, self).default_get(vals)        
         result['cat_codigo'] = self.search([], order="id desc", limit=1).id + 1     
         return result
+   
