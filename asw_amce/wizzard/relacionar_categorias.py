@@ -16,8 +16,7 @@ class asw_relacionar_cateogira(models.TransientModel):
         result = super(asw_relacionar_cateogira, self).default_get(vals)             
         cat_id = self.env.context.get('active_id')
         cat = self.cat_id.browse(cat_id)
-        profesionales = self.prof_ids.search([('pro_grupo','=', cat.cat_grupo.id)])
-        # import ipdb; ipdb.set_trace()
+        profesionales = self.prof_ids.search([('pro_grupo','=', cat.cat_grupo.id)])        
         result['cat_id'] = cat_id
         result['grupo_id'] = cat.cat_grupo.id
         result['prof_ids'] = [(6, 0, profesionales.ids)]
