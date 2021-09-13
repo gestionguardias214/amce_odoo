@@ -157,6 +157,11 @@ class asw_historia(models.Model):
         string='Historia Proceso Paciente',
         default=False
     )
+
+    imagenes_ecg_ids = fields.One2many(string='Imagenes ECG', 
+        comodel_name='asw.historia_imagenes_ecg',
+        inverse_name='historia_id' 
+    )
     
     key = fields.Char(
         string='key',
@@ -206,7 +211,16 @@ class asw_historia(models.Model):
             
             vals['historia_trauma_detalle_ids'] = [(6, 0, ids_trauma_detalle)]
         
-        return super(asw_historia, self).create(vals)
+        result = super(asw_historia, self).create(vals)
+
+        if('imagenesEcg' in vals):
+            for mecg in vals['imagenesEcg']:
+                mecg.update({
+                    'historia_id': result.id
+                })
+                nsv = self.imagenes_ecg_ids.create(mecg)
+
+        return result
     
     # @api.multi
     # def obtener_datos_firebase(self):

@@ -1,6 +1,7 @@
 from . import historia_signos_vitales
 from . import historia_score_glasgow
 from . import historia_trauma_detalle
+from . import historia_imagenes_ecg
 from . import opcion_dobe
 from . import historia_paciente
 from . import plan
@@ -31,7 +32,6 @@ from . import hosp
 from . import medicacion
 from . import medicamentos
 from . import historia
-from . import quem
 from . import quem
 from . import movil
 from . import cobertura

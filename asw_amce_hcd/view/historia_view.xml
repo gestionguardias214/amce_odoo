@@ -54,6 +54,14 @@
                                     <field name="hpa_piso" />
                                     <field name="hpa_dto" />                           
                                 </group>
+
+                                
+                                <group string="Imagenes ECG">
+                                    <field name="imagenes_ecg_ids" nolabel='1'> 
+                                        <field name="name" />
+                                        <field name="file" />
+                                    </field>
+                                </group>
                                 
                                 <group string="Signos Vitales">
                                     <field name="historia_signos_vitales_ids" nolabel='1'>                                
@@ -160,6 +168,12 @@
                                 <group>
                                     <field name="motivo_cancelacion" />
                                     <field name="active" />                                
+                                </group>
+
+                                <group string='Nombre Imagenes'>
+                                    <field name="archivo_firma" />                                
+                                    <field name="historia_archivo_firma_pac_acompanante" />
+                                    <field name="historia_archivo_firma_med_derivante" />                                
                                 </group>
                                 
                                 
