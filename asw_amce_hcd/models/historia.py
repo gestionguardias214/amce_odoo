@@ -212,7 +212,7 @@ class asw_historia(models.Model):
             vals['historia_trauma_detalle_ids'] = [(6, 0, ids_trauma_detalle)]
         
         result = super(asw_historia, self).create(vals)
-
+        
         if('imagenesEcg' in vals):
             for mecg in vals['imagenesEcg']:
                 mecg.update({

@@ -92,6 +92,7 @@ asw_amce_hcd Module Project.
         'view/historia_view.xml',
         'view/estado_mental.xml',
         'view/instituciones_view.xml',
+        'view/historia_imagenes_ecg.xml',
         'view/menu.xml',
         'security/permisos.xml',
         'security/ir.model.access.csv',

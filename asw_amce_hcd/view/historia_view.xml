@@ -54,14 +54,7 @@
                                     <field name="hpa_piso" />
                                     <field name="hpa_dto" />                           
                                 </group>
-
-                                
-                                <group string="Imagenes ECG">
-                                    <field name="imagenes_ecg_ids" nolabel='1'> 
-                                        <field name="name" />
-                                        <field name="file" />
-                                    </field>
-                                </group>
+                              
                                 
                                 <group string="Signos Vitales">
                                     <field name="historia_signos_vitales_ids" nolabel='1'>                                
@@ -177,6 +170,35 @@
                                 </group>
                                 
                                 
+                            </page>
+                            <page string='Imagenes ECG'>                                
+                                <field name="imagenes_ecg_ids" nolabel='1' widget='many2many_kanban'>   
+                                    <kanban class="o_kanban_mobile">
+                                        <!-- Design your customise template here -->
+                                        <field name='file' />
+                                        <field name='name' />
+                                        <templates>
+                                            <t t-name="kanban-box">                                                
+                                                <div>        
+                                                    <a t-att-href="kanban_image('asw.historia_imagenes_ecg', 'file', record.id)"
+                                                        t-att-download='"imagenECG.png"'
+                                                        target="_blank"
+                                                    >
+                                                        <img t-att-src="kanban_image('asw.historia_imagenes_ecg', 'file', record.id)" 
+                                                            style="width: 290px;" class="oe_resource_picture"/>  
+                                                        <span> 
+                                                            Descargar
+                                                        </span>
+                                                    </a>                                          
+                                                </div>
+                                            </t>
+                                        </templates>
+                                    </kanban>                                      
+                                    <!-- <tree>
+                                        <field name="name" />
+                                        <field name="file" widget='image'/>
+                                    </tree> -->
+                                </field>                                
                             </page>
                         </notebook>
                     </sheet>
