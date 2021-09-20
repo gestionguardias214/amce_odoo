@@ -108,7 +108,7 @@ class asw_pac(models.Model):
             'pac_nro': hcd.hpa_nro,
             'pac_piso': hcd.hpa_piso,
             'pac_dto': hcd.hpa_dto,
-            'pac_antecedentes': hcd.historia_dni_pac_acompanante
+            'pac_antecedentes': hcd.historia_antecedentes_id
         }
         
         if(paciente.id == False):
