@@ -54,6 +54,12 @@ class asw_turno_fabrica(models.Model):
     tuf_refuerzo = fields.Boolean(
         string='Todas las guardias son de Refuerzo?',
     )
+
+    tuf_proyectos = fields.Many2one(
+        string=u'Nombre del Proyecto',
+        comodel_name='asw.proyectos',
+        ondelete='set null'
+    )
      
 
     def calcular(self):

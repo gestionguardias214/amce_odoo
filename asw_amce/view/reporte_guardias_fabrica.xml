@@ -18,7 +18,8 @@
                     <field name="gua_ingreso" />
                     <field name="gua_profesional" />
                     <field name="gua_categoria" />
-                    <field name="gua_fabrica" />                    
+                    <field name="gua_fabrica" />      
+                    <field name="gua_proyecto" />      
                     <field name="importe_normal" sum='1'/>
                     <field name="importe_adicionales" sum='1'/>
                     <field name="gua_importe_conceptos" sum='1'/>
@@ -41,6 +42,7 @@
                         <field name="gua_profesional" />
                         <field name="gua_categoria" />
                         <field name="gua_fabrica" />
+                        <field name="gua_proyecto" />
                         <field name="gua_canthoras" sum="1"/>                     
                         <field name="importe_normal" sum="1"/>
                         <field name="importe_adicionales" sum="1"/>
@@ -61,6 +63,7 @@
                 <graph string="Guardia">
                     <field name='gua_periodo'/>
                     <field name="gua_fabrica" />
+                    <field name="gua_proyecto" />
                     <field name="importe_normal" type="measure"/>
                     <field name="importe_adicionales" type="measure"/>
                     <field name="gua_importe_conceptos" type="measure"/>
@@ -83,6 +86,7 @@
                     <field name="gua_grupo" string="Grupo" filter_domain="[('gua_grupo', 'ilike', self)]"/>
                     <field name="gua_ingreso" string="Fecha de Ingreso" filter_domain="[('gua_ingreso', 'ilike', self)]"/>
                     <field name="gua_fabrica" string="Fabrica" filter_domain="[('gua_fabrica', 'ilike', self)]"/>
+                    <field name="gua_proyecto" string="Proyecto" filter_domain="[('gua_proyecto', 'ilike', self)]"/>
                 </search>
             </field>
         </record>

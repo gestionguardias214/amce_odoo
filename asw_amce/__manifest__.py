@@ -42,6 +42,7 @@
         'reports/report_liquidaciones_listado.xml',
         'reports/report_liquidacion.xml',
         'view/reporte_guardias_fabrica.xml',
+        'view/proyectos.xml',
         'view/menu.xml',
     ],
     'application': True,

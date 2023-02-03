@@ -59,6 +59,14 @@ class asw_guardia(models.Model):
         track_visibility='onchange',
     )
 
+    gua_proyecto = fields.Many2one(
+        string=u'Nombre del Proyecto',
+        comodel_name='asw.proyectos',
+        ondelete='set null',
+        related='gua_tuf.tuf_proyectos',
+        store=True
+    )
+
     gua_importe_conceptos = fields.Float(string='Importe Conceptos', compute='calcular_importe_conceptos',store=True)
     
     gua_importe_total = fields.Float(string='Importe Total', compute='calcular_importe_total', store=True)
@@ -141,7 +149,7 @@ class asw_guardia(models.Model):
     gua_refuerzo = fields.Boolean(
         string='Es refuerzo?',
     )
-    
+
         
     @api.depends('gua_categoria')
     def _compute_gua_fabrica(self):

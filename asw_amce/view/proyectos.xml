@@ -1,0 +1,57 @@
+<openerp>
+    <data>
+        <record model="ir.actions.act_window" id="asw_proyectos">
+            <field name="name">Lista de Proyectos</field>
+            <field name="res_model">asw.proyectos</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Cree el primer Proyecto</p>
+            </field>
+        </record>
+
+        <record id="view_tree_proyectos_ui" model="ir.ui.view">
+            <field name="name">Proyectos</field>
+            <field name="model">asw.proyectos</field>
+            <field name="arch" type="xml">
+            <tree>
+                <field name="proyecto_fabrica" />
+            </tree>
+            </field>
+        </record>
+
+        <record id="view_form_proyectos_ui" model="ir.ui.view">
+            <field name="name">Proyectos</field>
+            <field name="model">asw.proyectos</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="proyecto_fabrica" class="oe_edit_only" />
+                            <h1>
+                                <field name="proyecto_fabrica" class="oe_inline" required="1"
+                                placeholder="Proyectod" />
+                            </h1>
+                        </div>
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"></field>
+                            <field name="message_ids" widget="mail_thread"></field>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_search_proyectos" model="ir.ui.view">
+            <field name="name">Proyecto</field>
+            <field name="model">asw.proyectos</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="proyecto_fabrica" />
+                </search>
+            </field>
+        </record>
+    </data>
+</openerp>

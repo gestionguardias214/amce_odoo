@@ -18,6 +18,7 @@
                     <field name="id" string="Nro"/>
                     <field name="tuf_fabrica" />
                     <field name="tuf_fecha" />
+                    <field name="tuf_proyectos" />
                     <field name="tuf_cantdias" />
                     <field name="tuf_estado" />
                 </tree>
@@ -38,6 +39,7 @@
                     <sheet>
                         <group>
                             <field name="tuf_fabrica" required="1" attrs="{ 'readonly' : [('tuf_estado', '=', 'validado')] }"/>
+                            <field name="tuf_proyectos" attrs="{ 'readonly' : [('tuf_estado', '=', 'validado')] }"/>
                         </group>
                         <group col="4">
                             <field name="tuf_fecha" required="1" attrs="{ 'readonly' : [('tuf_estado', '=', 'validado')] }"/>

@@ -60,6 +60,12 @@ class asw_reporte_guardias_fabricas(models.Model):
         ondelete='restrict',
     )
 
+    gua_proyecto = fields.Many2one(
+        string='Nombre del Proyecto',
+        comodel_name='asw.proyectos',
+        ondelete='set null',
+    )
+
     gua_grupo = fields.Many2one(
         string=u'Grupo',
         comodel_name='asw.grupo',
@@ -106,7 +112,8 @@ class asw_reporte_guardias_fabricas(models.Model):
                 end as importe_adicionales,
                 gua_importe_conceptos,
                 gua_importe_total,
-            gua_refuerzo
+            gua_refuerzo,
+            gua_proyecto
             from asw_guardia
         """
     
