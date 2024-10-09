@@ -93,7 +93,7 @@ class asw_turno_fabrica(models.Model):
         concepto_viatico =  self.env['asw.configuracion'].browse(1).con_concepto_viatico
         for linea in self.tuf_lineas_turno_fabrica:            
             linea._al_cambiar_fechas()            
-            periodo = self.obtenerPeriodo(linea.ltf_fecha, linea.ltf_profesional.pro_grupo)            
+            periodo = self.obtenerPeriodo(linea.ltf_fecha_fin, linea.ltf_profesional.pro_grupo)            
 
             hs = 0
             if(linea.ltf_refuerzo):
