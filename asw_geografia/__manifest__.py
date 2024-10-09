@@ -1,4 +1,3 @@
-
 # -*- coding: utf-8 -*-
 ###############################################################################
 #
@@ -22,54 +21,37 @@
 #
 ###############################################################################
 {
-    'name': 'asw_geografia',
-    'summary': 'asw_geografia Module Project',
-    'version': '1.0',
-
-    'description': """
+    "name": "asw_geografia",
+    "summary": "asw_geografia Module Project",
+    "version": "1.0",
+    "description": """
 asw_geografia Module Project.
 ==============================================
 
 
     """,
-
-    'author': 'ANAC SOFT',
-    'maintainer': 'ANAC SOFT',
-    'contributors': ['ANAC SOFT <ANAC SOFT@gmail.com>'],
-
-    'website': 'http://anacsoft.com',
-
-    'license': 'AGPL-3',
-    'category': 'Uncategorized',
-
-    'depends': [
-        'base',
-        'mail',
-        'asw_framework'
-    ],
-    'external_dependencies': {
-        'python': [
-        ],
+    "author": "ANAC SOFT",
+    "maintainer": "ANAC SOFT",
+    "contributors": ["ANAC SOFT <ANAC SOFT@gmail.com>"],
+    "website": "http://anacsoft.com",
+    "license": "AGPL-3",
+    "category": "Uncategorized",
+    "depends": ["base", "mail", "asw_framework"],
+    "external_dependencies": {
+        "python": [],
     },
-    'data': [
-        'view/localidad.xml',
-        'view/provincia.xml',
-        'view/zona.xml',
-        'view/menu.xml',
-        'security/ir.model.access.csv'
+    "data": [
+        "view/localidad.xml",
+        "view/provincia.xml",
+        "view/zona.xml",
+        "view/menu.xml",
+        "security/ir.model.access.csv",
     ],
-    'demo': [
-    ],
-    'js': [
-    ],
-    'css': [
-    ],
-    'qweb': [
-    ],
-    'images': [
-    ],
-    'test': [
-    ],
-
-    'installable': True
+    "demo": [],
+    "js": [],
+    "css": [],
+    "qweb": [],
+    "images": [],
+    "test": [],
+    "installable": True,
 }

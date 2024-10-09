@@ -25,4 +25,4 @@ from . import calculo_sac
 from . import correcciones_admin
 from . import res_company
 from . import reporte_guardias_fabrica
-from . import  proyectos
+from . import proyectos

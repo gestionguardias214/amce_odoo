@@ -15,20 +15,21 @@ from odoo import models, fields, api
 #     'storageBucket': path_storage,
 # })
 
+
 class asw_firestore(models.AbstractModel):
-    _name = 'asw.firestore'
+    _name = "asw.firestore"
 
     # def obtener_archivo(self, archivo):
-    #     path_guardado = self.descargar_archivo(archivo)    
+    #     path_guardado = self.descargar_archivo(archivo)
     #     return self.leer_archivo(path_guardado)
-    
+
     # def leer_archivo(self, path):
     #     file = open(path, "rb")
     #     out = file.read()
     #     file.close()
     #     file_64 = base64.b64encode(out)
 
-    #     return file_64    
+    #     return file_64
 
     # def descargar_archivo(self, nombre):
     #     bucket = storage.bucket(app=app)

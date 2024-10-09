@@ -1,4 +1,3 @@
-
 # -*- coding: utf-8 -*-
 ###############################################################################
 #
@@ -22,47 +21,31 @@
 #
 ###############################################################################
 {
-    'name': 'asw_framework',
-    'summary': 'asw_framework Module Project',
-    'version': '1.1',
-
-    'description': """
+    "name": "asw_framework",
+    "summary": "asw_framework Module Project",
+    "version": "1.1",
+    "description": """
 Framework ANAC SOFT Module Project.
 ==============================================
 
 
     """,
-
-    'author': 'ANAC SOFT',
-    'maintainer': 'ANAC SOFT',
-    'contributors': ['ANAC SOFT <ANAC SOFT@gmail.com>'],
-
-    'website': 'http://anacsoft.com',
-
-    'license': 'AGPL-3',
-    'category': 'Uncategorized',
-
-    'depends': [
-        'base'
-    ],
-    'external_dependencies': {
-        'python': [
-        ],
+    "author": "ANAC SOFT",
+    "maintainer": "ANAC SOFT",
+    "contributors": ["ANAC SOFT <ANAC SOFT@gmail.com>"],
+    "website": "http://anacsoft.com",
+    "license": "AGPL-3",
+    "category": "Uncategorized",
+    "depends": ["base"],
+    "external_dependencies": {
+        "python": [],
     },
-    'data': [
-    ],
-    'demo': [
-    ],
-    'js': [
-    ],
-    'css': [
-    ],
-    'qweb': [
-    ],
-    'images': [
-    ],
-    'test': [
-    ],
-
-    'installable': True
+    "data": [],
+    "demo": [],
+    "js": [],
+    "css": [],
+    "qweb": [],
+    "images": [],
+    "test": [],
+    "installable": True,
 }

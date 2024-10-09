@@ -4,8 +4,7 @@
 
 {
     "name": "Web Responsive",
-    "summary": "It provides a mobile compliant interface for Odoo Community "
-               "web",
+    "summary": "It provides a mobile compliant interface for Odoo Community " "web",
     "version": "10.0.1.1.0",
     "category": "Website",
     "website": "https://laslabs.com/",
@@ -13,14 +12,14 @@
     "license": "LGPL-3",
     "installable": True,
     "depends": [
-        'web',
+        "web",
     ],
     "data": [
-        'views/assets.xml',
-        'views/web.xml',
+        "views/assets.xml",
+        "views/web.xml",
     ],
-    'qweb': [
-        'static/src/xml/form_view.xml',
-        'static/src/xml/navbar.xml',
+    "qweb": [
+        "static/src/xml/form_view.xml",
+        "static/src/xml/navbar.xml",
     ],
 }

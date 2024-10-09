@@ -8,20 +8,17 @@
     "version": "10.0.1.0.20",
     "category": "Themes/Backend",
     "website": "http://www.openworx.nl",
-	"description": """
+    "description": """
 		Backend theme for Odoo 10.0 community edition.
     """,
-	'images':[
-        'images/screen.png'
-	],
+    "images": ["images/screen.png"],
     "author": "Openworx",
     "license": "LGPL-3",
     "installable": True,
     "depends": [
-	'web_responsive',
+        "web_responsive",
     ],
     "data": [
-        'views/assets.xml',
+        "views/assets.xml",
     ],
 }
-
